@@ -154,8 +154,13 @@ def generate_benchmark(scale: str, seed: int = 42) -> dict:
     }
 
 
-def to_structured(data: dict) -> str:
-    """Convert benchmark data to structured JSON-lines format."""
+def to_structured(data: dict, shuffle: bool = False) -> str:
+    """Convert benchmark data to structured JSON-lines format.
+    
+    Args:
+        data: Benchmark data dict  
+        shuffle: If True, randomize transaction order (tests temporal reasoning)
+    """
     lines = []
 
     # Header comment
@@ -163,6 +168,8 @@ def to_structured(data: dict) -> str:
     lines.append(f"# Warehouses: {data['metadata']['num_warehouses']}")
     lines.append(f"# SKUs: {data['metadata']['num_skus']}")
     lines.append(f"# Transactions: {data['metadata']['num_transactions']}")
+    if shuffle:
+        lines.append("# NOTE: Transactions are NOT in chronological order - use timestamps")
     lines.append("")
 
     # Initial inventory
@@ -172,9 +179,13 @@ def to_structured(data: dict) -> str:
             lines.append(json.dumps({"type": "initial", "warehouse": wh, "sku": sku, "quantity": qty}))
     lines.append("")
 
-    # Transactions
+    # Transactions (optionally shuffled)
+    transactions = data["transactions"].copy()
+    if shuffle:
+        random.shuffle(transactions)
+        
     lines.append("## TRANSACTION LOG")
-    for tx in data["transactions"]:
+    for tx in transactions:
         lines.append(json.dumps(tx))
     lines.append("")
 
@@ -192,7 +203,7 @@ def to_structured(data: dict) -> str:
     return "\n".join(lines)
 
 
-def to_toon(data: dict) -> str:
+def to_toon(data: dict, shuffle: bool = False) -> str:
     """
     Convert benchmark data to TOON (Token-Oriented Object Notation) format.
 
@@ -235,7 +246,7 @@ def to_toon(data: dict) -> str:
     return toon_str
 
 
-def to_chat_json(data: dict) -> str:
+def to_chat_json(data: dict, shuffle: bool = False) -> str:
     """
     Convert benchmark data to chat/message API style JSON.
 
@@ -294,7 +305,7 @@ def to_chat_json(data: dict) -> str:
     return "\n".join(lines)
 
 
-def to_csv(data: dict) -> str:
+def to_csv(data: dict, shuffle: bool = False) -> str:
     """
     Convert benchmark data to CSV tabular format.
 
@@ -340,7 +351,7 @@ def to_csv(data: dict) -> str:
     return "\n".join(lines)
 
 
-def to_prose(data: dict) -> str:
+def to_prose(data: dict, shuffle: bool = False) -> str:
     """Convert benchmark data to natural language prose format."""
     lines = []
 
@@ -1112,6 +1123,8 @@ def main():
                              help="Model to use")
     quick_parser.add_argument("--provider", type=str, choices=["openai", "gemini"], default="openai",
                              help="API provider (openai or gemini)")
+    quick_parser.add_argument("--shuffle", action="store_true",
+                             help="Shuffle transaction order (tests temporal reasoning)")
 
     # Experiment command (comprehensive white paper experiment)
     exp_parser = subparsers.add_parser("experiment", help="Run comprehensive experiment for white paper")
@@ -1267,18 +1280,22 @@ def main():
         print(f"Question: {data['question']['text']}")
         print(f"Expected answer: {data['answer']}\n")
 
+        shuffle = getattr(args, 'shuffle', False)
+        if shuffle:
+            print("[SHUFFLE MODE] Transactions will be in random order")
+            
         for fmt in ["structured", "toon", "chat_json", "csv", "prose"]:
             print(f"Testing {fmt} format...")
             if fmt == "structured":
-                prompt = to_structured(data)
+                prompt = to_structured(data, shuffle=shuffle)
             elif fmt == "toon":
-                prompt = to_toon(data)
+                prompt = to_toon(data, shuffle=shuffle)
             elif fmt == "chat_json":
-                prompt = to_chat_json(data)
+                prompt = to_chat_json(data, shuffle=shuffle)
             elif fmt == "csv":
-                prompt = to_csv(data)
+                prompt = to_csv(data, shuffle=shuffle)
             else:
-                prompt = to_prose(data)
+                prompt = to_prose(data, shuffle=shuffle)
 
             print(f"  Token estimate: ~{estimate_tokens(prompt):,}")
 
