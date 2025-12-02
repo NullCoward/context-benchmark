@@ -1,0 +1,3284 @@
+metadata:
+  warehouses: 10
+  skus: 10
+  transactions: 500
+initial_inventory[100,]{warehouse,sku,quantity}:
+  WH-0000,SKU-0000,78
+  WH-0000,SKU-0001,56
+  WH-0000,SKU-0002,120
+  WH-0000,SKU-0003,112
+  WH-0000,SKU-0004,107
+  WH-0000,SKU-0005,85
+  WH-0000,SKU-0006,76
+  WH-0000,SKU-0007,189
+  WH-0000,SKU-0008,72
+  WH-0000,SKU-0009,158
+  WH-0001,SKU-0000,58
+  WH-0001,SKU-0001,57
+  WH-0001,SKU-0002,73
+  WH-0001,SKU-0003,105
+  WH-0001,SKU-0004,109
+  WH-0001,SKU-0005,179
+  WH-0001,SKU-0006,56
+  WH-0001,SKU-0007,193
+  WH-0001,SKU-0008,100
+  WH-0001,SKU-0009,189
+  WH-0002,SKU-0000,157
+  WH-0002,SKU-0001,106
+  WH-0002,SKU-0002,164
+  WH-0002,SKU-0003,200
+  WH-0002,SKU-0004,121
+  WH-0002,SKU-0005,51
+  WH-0002,SKU-0006,90
+  WH-0002,SKU-0007,158
+  WH-0002,SKU-0008,137
+  WH-0002,SKU-0009,121
+  WH-0003,SKU-0000,89
+  WH-0003,SKU-0001,105
+  WH-0003,SKU-0002,136
+  WH-0003,SKU-0003,76
+  WH-0003,SKU-0004,73
+  WH-0003,SKU-0005,147
+  WH-0003,SKU-0006,74
+  WH-0003,SKU-0007,141
+  WH-0003,SKU-0008,138
+  WH-0003,SKU-0009,117
+  WH-0004,SKU-0000,61
+  WH-0004,SKU-0001,167
+  WH-0004,SKU-0002,187
+  WH-0004,SKU-0003,81
+  WH-0004,SKU-0004,146
+  WH-0004,SKU-0005,70
+  WH-0004,SKU-0006,191
+  WH-0004,SKU-0007,125
+  WH-0004,SKU-0008,142
+  WH-0004,SKU-0009,197
+  WH-0005,SKU-0000,99
+  WH-0005,SKU-0001,67
+  WH-0005,SKU-0002,61
+  WH-0005,SKU-0003,108
+  WH-0005,SKU-0004,124
+  WH-0005,SKU-0005,70
+  WH-0005,SKU-0006,109
+  WH-0005,SKU-0007,75
+  WH-0005,SKU-0008,147
+  WH-0005,SKU-0009,121
+  WH-0006,SKU-0000,166
+  WH-0006,SKU-0001,143
+  WH-0006,SKU-0002,91
+  WH-0006,SKU-0003,144
+  WH-0006,SKU-0004,140
+  WH-0006,SKU-0005,103
+  WH-0006,SKU-0006,118
+  WH-0006,SKU-0007,68
+  WH-0006,SKU-0008,93
+  WH-0006,SKU-0009,186
+  WH-0007,SKU-0000,112
+  WH-0007,SKU-0001,91
+  WH-0007,SKU-0002,168
+  WH-0007,SKU-0003,147
+  WH-0007,SKU-0004,119
+  WH-0007,SKU-0005,192
+  WH-0007,SKU-0006,106
+  WH-0007,SKU-0007,133
+  WH-0007,SKU-0008,64
+  WH-0007,SKU-0009,108
+  WH-0008,SKU-0000,58
+  WH-0008,SKU-0001,130
+  WH-0008,SKU-0002,152
+  WH-0008,SKU-0003,118
+  WH-0008,SKU-0004,66
+  WH-0008,SKU-0005,104
+  WH-0008,SKU-0006,195
+  WH-0008,SKU-0007,130
+  WH-0008,SKU-0008,104
+  WH-0008,SKU-0009,177
+  WH-0009,SKU-0000,151
+  WH-0009,SKU-0001,167
+  WH-0009,SKU-0002,86
+  WH-0009,SKU-0003,117
+  WH-0009,SKU-0004,85
+  WH-0009,SKU-0005,113
+  WH-0009,SKU-0006,193
+  WH-0009,SKU-0007,187
+  WH-0009,SKU-0008,117
+  WH-0009,SKU-0009,199
+transactions[500]:
+  - id: TX-000000
+    timestamp: "2024-01-01T00:00:00"
+    warehouse: WH-0009
+    sku: SKU-0006
+    action: restock
+    quantity: 56
+  - id: TX-000001
+    timestamp: "2024-01-01T00:02:22"
+    warehouse: WH-0002
+    sku: SKU-0008
+    action: adjustment
+    quantity: 5
+    reason: audit
+  - id: TX-000002
+    timestamp: "2024-01-01T00:03:16"
+    warehouse: WH-0002
+    sku: SKU-0002
+    action: transfer
+    quantity: 20
+    destination: WH-0007
+  - id: TX-000003
+    timestamp: "2024-01-01T00:04:18"
+    warehouse: WH-0009
+    sku: SKU-0007
+    action: sale
+    quantity: 17
+  - id: TX-000004
+    timestamp: "2024-01-01T00:06:56"
+    warehouse: WH-0000
+    sku: SKU-0001
+    action: adjustment
+    quantity: 7
+    reason: found
+  - id: TX-000005
+    timestamp: "2024-01-01T00:10:20"
+    warehouse: WH-0006
+    sku: SKU-0002
+    action: sale
+    quantity: 15
+  - id: TX-000006
+    timestamp: "2024-01-01T00:10:51"
+    warehouse: WH-0004
+    sku: SKU-0008
+    action: adjustment
+    quantity: -5
+    reason: audit
+  - id: TX-000007
+    timestamp: "2024-01-01T00:13:53"
+    warehouse: WH-0008
+    sku: SKU-0009
+    action: transfer
+    quantity: 5
+    destination: WH-0003
+  - id: TX-000008
+    timestamp: "2024-01-01T00:17:34"
+    warehouse: WH-0008
+    sku: SKU-0008
+    action: transfer
+    quantity: 20
+    destination: WH-0000
+  - id: TX-000009
+    timestamp: "2024-01-01T00:20:49"
+    warehouse: WH-0001
+    sku: SKU-0005
+    action: restock
+    quantity: 49
+  - id: TX-000010
+    timestamp: "2024-01-01T00:23:21"
+    warehouse: WH-0009
+    sku: SKU-0001
+    action: sale
+    quantity: 3
+  - id: TX-000011
+    timestamp: "2024-01-01T00:27:59"
+    warehouse: WH-0008
+    sku: SKU-0002
+    action: transfer
+    quantity: 22
+    destination: WH-0002
+  - id: TX-000012
+    timestamp: "2024-01-01T00:32:32"
+    warehouse: WH-0002
+    sku: SKU-0004
+    action: adjustment
+    quantity: 6
+    reason: correction
+  - id: TX-000013
+    timestamp: "2024-01-01T00:34:50"
+    warehouse: WH-0003
+    sku: SKU-0004
+    action: adjustment
+    quantity: 2
+    reason: found
+  - id: TX-000014
+    timestamp: "2024-01-01T00:39:04"
+    warehouse: WH-0007
+    sku: SKU-0001
+    action: transfer
+    quantity: 8
+    destination: WH-0003
+  - id: TX-000015
+    timestamp: "2024-01-01T00:40:06"
+    warehouse: WH-0009
+    sku: SKU-0008
+    action: sale
+    quantity: 8
+  - id: TX-000016
+    timestamp: "2024-01-01T00:42:28"
+    warehouse: WH-0000
+    sku: SKU-0003
+    action: sale
+    quantity: 3
+  - id: TX-000017
+    timestamp: "2024-01-01T00:43:14"
+    warehouse: WH-0001
+    sku: SKU-0008
+    action: transfer
+    quantity: 9
+    destination: WH-0004
+  - id: TX-000018
+    timestamp: "2024-01-01T00:47:52"
+    warehouse: WH-0002
+    sku: SKU-0009
+    action: sale
+    quantity: 19
+  - id: TX-000019
+    timestamp: "2024-01-01T00:52:24"
+    warehouse: WH-0007
+    sku: SKU-0006
+    action: sale
+    quantity: 7
+  - id: TX-000020
+    timestamp: "2024-01-01T00:53:42"
+    warehouse: WH-0006
+    sku: SKU-0005
+    action: sale
+    quantity: 14
+  - id: TX-000021
+    timestamp: "2024-01-01T00:57:42"
+    warehouse: WH-0000
+    sku: SKU-0001
+    action: restock
+    quantity: 17
+  - id: TX-000022
+    timestamp: "2024-01-01T01:01:38"
+    warehouse: WH-0001
+    sku: SKU-0003
+    action: transfer
+    quantity: 7
+    destination: WH-0004
+  - id: TX-000023
+    timestamp: "2024-01-01T01:05:57"
+    warehouse: WH-0002
+    sku: SKU-0004
+    action: sale
+    quantity: 15
+  - id: TX-000024
+    timestamp: "2024-01-01T01:08:34"
+    warehouse: WH-0001
+    sku: SKU-0007
+    action: transfer
+    quantity: 4
+    destination: WH-0009
+  - id: TX-000025
+    timestamp: "2024-01-01T01:09:29"
+    warehouse: WH-0008
+    sku: SKU-0000
+    action: transfer
+    quantity: 30
+    destination: WH-0001
+  - id: TX-000026
+    timestamp: "2024-01-01T01:12:00"
+    warehouse: WH-0007
+    sku: SKU-0007
+    action: sale
+    quantity: 7
+  - id: TX-000027
+    timestamp: "2024-01-01T01:15:55"
+    warehouse: WH-0002
+    sku: SKU-0006
+    action: adjustment
+    quantity: -10
+    reason: correction
+  - id: TX-000028
+    timestamp: "2024-01-01T01:18:40"
+    warehouse: WH-0007
+    sku: SKU-0004
+    action: adjustment
+    quantity: 3
+    reason: correction
+  - id: TX-000029
+    timestamp: "2024-01-01T01:20:29"
+    warehouse: WH-0003
+    sku: SKU-0000
+    action: sale
+    quantity: 19
+  - id: TX-000030
+    timestamp: "2024-01-01T01:21:30"
+    warehouse: WH-0000
+    sku: SKU-0000
+    action: transfer
+    quantity: 17
+    destination: WH-0008
+  - id: TX-000031
+    timestamp: "2024-01-01T01:23:20"
+    warehouse: WH-0008
+    sku: SKU-0001
+    action: sale
+    quantity: 6
+  - id: TX-000032
+    timestamp: "2024-01-01T01:24:25"
+    warehouse: WH-0003
+    sku: SKU-0006
+    action: restock
+    quantity: 25
+  - id: TX-000033
+    timestamp: "2024-01-01T01:27:01"
+    warehouse: WH-0000
+    sku: SKU-0009
+    action: restock
+    quantity: 20
+  - id: TX-000034
+    timestamp: "2024-01-01T01:31:05"
+    warehouse: WH-0009
+    sku: SKU-0008
+    action: transfer
+    quantity: 30
+    destination: WH-0005
+  - id: TX-000035
+    timestamp: "2024-01-01T01:33:48"
+    warehouse: WH-0005
+    sku: SKU-0003
+    action: sale
+    quantity: 9
+  - id: TX-000036
+    timestamp: "2024-01-01T01:37:40"
+    warehouse: WH-0004
+    sku: SKU-0007
+    action: sale
+    quantity: 11
+  - id: TX-000037
+    timestamp: "2024-01-01T01:38:47"
+    warehouse: WH-0009
+    sku: SKU-0009
+    action: sale
+    quantity: 4
+  - id: TX-000038
+    timestamp: "2024-01-01T01:39:54"
+    warehouse: WH-0008
+    sku: SKU-0004
+    action: restock
+    quantity: 26
+  - id: TX-000039
+    timestamp: "2024-01-01T01:43:22"
+    warehouse: WH-0003
+    sku: SKU-0005
+    action: transfer
+    quantity: 6
+    destination: WH-0005
+  - id: TX-000040
+    timestamp: "2024-01-01T01:47:36"
+    warehouse: WH-0004
+    sku: SKU-0009
+    action: transfer
+    quantity: 1
+    destination: WH-0009
+  - id: TX-000041
+    timestamp: "2024-01-01T01:50:39"
+    warehouse: WH-0001
+    sku: SKU-0002
+    action: adjustment
+    quantity: -2
+    reason: audit
+  - id: TX-000042
+    timestamp: "2024-01-01T01:52:03"
+    warehouse: WH-0002
+    sku: SKU-0004
+    action: transfer
+    quantity: 20
+    destination: WH-0005
+  - id: TX-000043
+    timestamp: "2024-01-01T01:54:20"
+    warehouse: WH-0003
+    sku: SKU-0004
+    action: transfer
+    quantity: 16
+    destination: WH-0009
+  - id: TX-000044
+    timestamp: "2024-01-01T01:56:58"
+    warehouse: WH-0000
+    sku: SKU-0001
+    action: adjustment
+    quantity: 10
+    reason: correction
+  - id: TX-000045
+    timestamp: "2024-01-01T01:59:49"
+    warehouse: WH-0005
+    sku: SKU-0002
+    action: sale
+    quantity: 21
+  - id: TX-000046
+    timestamp: "2024-01-01T02:02:33"
+    warehouse: WH-0007
+    sku: SKU-0008
+    action: sale
+    quantity: 23
+  - id: TX-000047
+    timestamp: "2024-01-01T02:06:41"
+    warehouse: WH-0001
+    sku: SKU-0001
+    action: restock
+    quantity: 98
+  - id: TX-000048
+    timestamp: "2024-01-01T02:08:27"
+    warehouse: WH-0005
+    sku: SKU-0009
+    action: restock
+    quantity: 80
+  - id: TX-000049
+    timestamp: "2024-01-01T02:10:12"
+    warehouse: WH-0000
+    sku: SKU-0004
+    action: restock
+    quantity: 56
+  - id: TX-000050
+    timestamp: "2024-01-01T02:11:02"
+    warehouse: WH-0003
+    sku: SKU-0003
+    action: transfer
+    quantity: 12
+    destination: WH-0001
+  - id: TX-000051
+    timestamp: "2024-01-01T02:15:00"
+    warehouse: WH-0002
+    sku: SKU-0003
+    action: adjustment
+    quantity: -5
+    reason: damage
+  - id: TX-000052
+    timestamp: "2024-01-01T02:19:01"
+    warehouse: WH-0005
+    sku: SKU-0006
+    action: sale
+    quantity: 22
+  - id: TX-000053
+    timestamp: "2024-01-01T02:21:38"
+    warehouse: WH-0001
+    sku: SKU-0006
+    action: sale
+    quantity: 2
+  - id: TX-000054
+    timestamp: "2024-01-01T02:26:08"
+    warehouse: WH-0007
+    sku: SKU-0005
+    action: sale
+    quantity: 10
+  - id: TX-000055
+    timestamp: "2024-01-01T02:28:34"
+    warehouse: WH-0003
+    sku: SKU-0006
+    action: sale
+    quantity: 11
+  - id: TX-000056
+    timestamp: "2024-01-01T02:31:26"
+    warehouse: WH-0004
+    sku: SKU-0005
+    action: transfer
+    quantity: 13
+    destination: WH-0009
+  - id: TX-000057
+    timestamp: "2024-01-01T02:34:45"
+    warehouse: WH-0001
+    sku: SKU-0004
+    action: adjustment
+    quantity: -5
+    reason: found
+  - id: TX-000058
+    timestamp: "2024-01-01T02:35:34"
+    warehouse: WH-0006
+    sku: SKU-0005
+    action: sale
+    quantity: 24
+  - id: TX-000059
+    timestamp: "2024-01-01T02:38:44"
+    warehouse: WH-0008
+    sku: SKU-0001
+    action: restock
+    quantity: 59
+  - id: TX-000060
+    timestamp: "2024-01-01T02:40:51"
+    warehouse: WH-0006
+    sku: SKU-0000
+    action: sale
+    quantity: 17
+  - id: TX-000061
+    timestamp: "2024-01-01T02:43:01"
+    warehouse: WH-0001
+    sku: SKU-0005
+    action: sale
+    quantity: 20
+  - id: TX-000062
+    timestamp: "2024-01-01T02:46:11"
+    warehouse: WH-0001
+    sku: SKU-0004
+    action: transfer
+    quantity: 10
+    destination: WH-0009
+  - id: TX-000063
+    timestamp: "2024-01-01T02:50:10"
+    warehouse: WH-0004
+    sku: SKU-0008
+    action: sale
+    quantity: 5
+  - id: TX-000064
+    timestamp: "2024-01-01T02:52:18"
+    warehouse: WH-0006
+    sku: SKU-0002
+    action: restock
+    quantity: 88
+  - id: TX-000065
+    timestamp: "2024-01-01T02:55:22"
+    warehouse: WH-0000
+    sku: SKU-0004
+    action: restock
+    quantity: 46
+  - id: TX-000066
+    timestamp: "2024-01-01T02:57:39"
+    warehouse: WH-0009
+    sku: SKU-0009
+    action: restock
+    quantity: 93
+  - id: TX-000067
+    timestamp: "2024-01-01T03:00:53"
+    warehouse: WH-0007
+    sku: SKU-0003
+    action: restock
+    quantity: 75
+  - id: TX-000068
+    timestamp: "2024-01-01T03:05:25"
+    warehouse: WH-0002
+    sku: SKU-0001
+    action: transfer
+    quantity: 17
+    destination: WH-0005
+  - id: TX-000069
+    timestamp: "2024-01-01T03:08:46"
+    warehouse: WH-0003
+    sku: SKU-0004
+    action: sale
+    quantity: 8
+  - id: TX-000070
+    timestamp: "2024-01-01T03:10:57"
+    warehouse: WH-0000
+    sku: SKU-0003
+    action: sale
+    quantity: 16
+  - id: TX-000071
+    timestamp: "2024-01-01T03:12:04"
+    warehouse: WH-0009
+    sku: SKU-0003
+    action: restock
+    quantity: 99
+  - id: TX-000072
+    timestamp: "2024-01-01T03:15:50"
+    warehouse: WH-0003
+    sku: SKU-0002
+    action: restock
+    quantity: 93
+  - id: TX-000073
+    timestamp: "2024-01-01T03:16:22"
+    warehouse: WH-0001
+    sku: SKU-0006
+    action: transfer
+    quantity: 6
+    destination: WH-0004
+  - id: TX-000074
+    timestamp: "2024-01-01T03:21:17"
+    warehouse: WH-0008
+    sku: SKU-0003
+    action: restock
+    quantity: 25
+  - id: TX-000075
+    timestamp: "2024-01-01T03:25:40"
+    warehouse: WH-0007
+    sku: SKU-0008
+    action: sale
+    quantity: 18
+  - id: TX-000076
+    timestamp: "2024-01-01T03:28:52"
+    warehouse: WH-0007
+    sku: SKU-0009
+    action: adjustment
+    quantity: 6
+    reason: correction
+  - id: TX-000077
+    timestamp: "2024-01-01T03:33:10"
+    warehouse: WH-0007
+    sku: SKU-0007
+    action: transfer
+    quantity: 25
+    destination: WH-0004
+  - id: TX-000078
+    timestamp: "2024-01-01T03:35:46"
+    warehouse: WH-0004
+    sku: SKU-0008
+    action: transfer
+    quantity: 21
+    destination: WH-0008
+  - id: TX-000079
+    timestamp: "2024-01-01T03:38:18"
+    warehouse: WH-0001
+    sku: SKU-0004
+    action: sale
+    quantity: 8
+  - id: TX-000080
+    timestamp: "2024-01-01T03:41:07"
+    warehouse: WH-0008
+    sku: SKU-0001
+    action: sale
+    quantity: 5
+  - id: TX-000081
+    timestamp: "2024-01-01T03:42:54"
+    warehouse: WH-0002
+    sku: SKU-0003
+    action: sale
+    quantity: 3
+  - id: TX-000082
+    timestamp: "2024-01-01T03:46:56"
+    warehouse: WH-0008
+    sku: SKU-0007
+    action: restock
+    quantity: 63
+  - id: TX-000083
+    timestamp: "2024-01-01T03:47:57"
+    warehouse: WH-0006
+    sku: SKU-0006
+    action: sale
+    quantity: 25
+  - id: TX-000084
+    timestamp: "2024-01-01T03:48:37"
+    warehouse: WH-0009
+    sku: SKU-0006
+    action: transfer
+    quantity: 1
+    destination: WH-0007
+  - id: TX-000085
+    timestamp: "2024-01-01T03:52:07"
+    warehouse: WH-0006
+    sku: SKU-0006
+    action: sale
+    quantity: 18
+  - id: TX-000086
+    timestamp: "2024-01-01T03:54:29"
+    warehouse: WH-0004
+    sku: SKU-0006
+    action: restock
+    quantity: 72
+  - id: TX-000087
+    timestamp: "2024-01-01T03:55:13"
+    warehouse: WH-0006
+    sku: SKU-0002
+    action: sale
+    quantity: 15
+  - id: TX-000088
+    timestamp: "2024-01-01T03:56:48"
+    warehouse: WH-0008
+    sku: SKU-0000
+    action: adjustment
+    quantity: 2
+    reason: audit
+  - id: TX-000089
+    timestamp: "2024-01-01T03:58:00"
+    warehouse: WH-0002
+    sku: SKU-0007
+    action: restock
+    quantity: 33
+  - id: TX-000090
+    timestamp: "2024-01-01T03:58:55"
+    warehouse: WH-0005
+    sku: SKU-0003
+    action: sale
+    quantity: 15
+  - id: TX-000091
+    timestamp: "2024-01-01T04:02:12"
+    warehouse: WH-0006
+    sku: SKU-0004
+    action: sale
+    quantity: 25
+  - id: TX-000092
+    timestamp: "2024-01-01T04:06:17"
+    warehouse: WH-0001
+    sku: SKU-0007
+    action: sale
+    quantity: 1
+  - id: TX-000093
+    timestamp: "2024-01-01T04:07:13"
+    warehouse: WH-0005
+    sku: SKU-0003
+    action: adjustment
+    quantity: 10
+    reason: audit
+  - id: TX-000094
+    timestamp: "2024-01-01T04:08:03"
+    warehouse: WH-0003
+    sku: SKU-0003
+    action: transfer
+    quantity: 20
+    destination: WH-0000
+  - id: TX-000095
+    timestamp: "2024-01-01T04:09:51"
+    warehouse: WH-0007
+    sku: SKU-0001
+    action: sale
+    quantity: 19
+  - id: TX-000096
+    timestamp: "2024-01-01T04:12:12"
+    warehouse: WH-0004
+    sku: SKU-0005
+    action: restock
+    quantity: 31
+  - id: TX-000097
+    timestamp: "2024-01-01T04:13:40"
+    warehouse: WH-0002
+    sku: SKU-0004
+    action: transfer
+    quantity: 19
+    destination: WH-0001
+  - id: TX-000098
+    timestamp: "2024-01-01T04:14:23"
+    warehouse: WH-0009
+    sku: SKU-0006
+    action: adjustment
+    quantity: 2
+    reason: damage
+  - id: TX-000099
+    timestamp: "2024-01-01T04:15:31"
+    warehouse: WH-0003
+    sku: SKU-0001
+    action: restock
+    quantity: 99
+  - id: TX-000100
+    timestamp: "2024-01-01T04:18:35"
+    warehouse: WH-0009
+    sku: SKU-0001
+    action: transfer
+    quantity: 12
+    destination: WH-0000
+  - id: TX-000101
+    timestamp: "2024-01-01T04:22:44"
+    warehouse: WH-0001
+    sku: SKU-0008
+    action: transfer
+    quantity: 1
+    destination: WH-0006
+  - id: TX-000102
+    timestamp: "2024-01-01T04:26:49"
+    warehouse: WH-0001
+    sku: SKU-0006
+    action: transfer
+    quantity: 21
+    destination: WH-0006
+  - id: TX-000103
+    timestamp: "2024-01-01T04:31:14"
+    warehouse: WH-0006
+    sku: SKU-0002
+    action: transfer
+    quantity: 21
+    destination: WH-0009
+  - id: TX-000104
+    timestamp: "2024-01-01T04:34:02"
+    warehouse: WH-0008
+    sku: SKU-0007
+    action: restock
+    quantity: 69
+  - id: TX-000105
+    timestamp: "2024-01-01T04:38:15"
+    warehouse: WH-0009
+    sku: SKU-0004
+    action: transfer
+    quantity: 28
+    destination: WH-0005
+  - id: TX-000106
+    timestamp: "2024-01-01T04:40:50"
+    warehouse: WH-0001
+    sku: SKU-0004
+    action: transfer
+    quantity: 8
+    destination: WH-0008
+  - id: TX-000107
+    timestamp: "2024-01-01T04:45:17"
+    warehouse: WH-0006
+    sku: SKU-0005
+    action: restock
+    quantity: 13
+  - id: TX-000108
+    timestamp: "2024-01-01T04:50:00"
+    warehouse: WH-0002
+    sku: SKU-0007
+    action: transfer
+    quantity: 12
+    destination: WH-0004
+  - id: TX-000109
+    timestamp: "2024-01-01T04:52:42"
+    warehouse: WH-0009
+    sku: SKU-0004
+    action: sale
+    quantity: 18
+  - id: TX-000110
+    timestamp: "2024-01-01T04:53:17"
+    warehouse: WH-0003
+    sku: SKU-0001
+    action: restock
+    quantity: 40
+  - id: TX-000111
+    timestamp: "2024-01-01T04:57:15"
+    warehouse: WH-0003
+    sku: SKU-0007
+    action: restock
+    quantity: 92
+  - id: TX-000112
+    timestamp: "2024-01-01T05:01:56"
+    warehouse: WH-0000
+    sku: SKU-0001
+    action: restock
+    quantity: 47
+  - id: TX-000113
+    timestamp: "2024-01-01T05:04:19"
+    warehouse: WH-0003
+    sku: SKU-0004
+    action: restock
+    quantity: 94
+  - id: TX-000114
+    timestamp: "2024-01-01T05:07:57"
+    warehouse: WH-0008
+    sku: SKU-0005
+    action: restock
+    quantity: 64
+  - id: TX-000115
+    timestamp: "2024-01-01T05:11:16"
+    warehouse: WH-0007
+    sku: SKU-0004
+    action: sale
+    quantity: 10
+  - id: TX-000116
+    timestamp: "2024-01-01T05:13:54"
+    warehouse: WH-0003
+    sku: SKU-0005
+    action: sale
+    quantity: 4
+  - id: TX-000117
+    timestamp: "2024-01-01T05:15:58"
+    warehouse: WH-0007
+    sku: SKU-0004
+    action: sale
+    quantity: 24
+  - id: TX-000118
+    timestamp: "2024-01-01T05:20:56"
+    warehouse: WH-0001
+    sku: SKU-0003
+    action: restock
+    quantity: 47
+  - id: TX-000119
+    timestamp: "2024-01-01T05:23:22"
+    warehouse: WH-0004
+    sku: SKU-0000
+    action: sale
+    quantity: 23
+  - id: TX-000120
+    timestamp: "2024-01-01T05:24:56"
+    warehouse: WH-0000
+    sku: SKU-0008
+    action: sale
+    quantity: 10
+  - id: TX-000121
+    timestamp: "2024-01-01T05:26:30"
+    warehouse: WH-0007
+    sku: SKU-0001
+    action: restock
+    quantity: 11
+  - id: TX-000122
+    timestamp: "2024-01-01T05:29:25"
+    warehouse: WH-0007
+    sku: SKU-0005
+    action: restock
+    quantity: 33
+  - id: TX-000123
+    timestamp: "2024-01-01T05:30:21"
+    warehouse: WH-0007
+    sku: SKU-0001
+    action: sale
+    quantity: 3
+  - id: TX-000124
+    timestamp: "2024-01-01T05:34:16"
+    warehouse: WH-0009
+    sku: SKU-0000
+    action: restock
+    quantity: 29
+  - id: TX-000125
+    timestamp: "2024-01-01T05:36:02"
+    warehouse: WH-0004
+    sku: SKU-0001
+    action: transfer
+    quantity: 4
+    destination: WH-0003
+  - id: TX-000126
+    timestamp: "2024-01-01T05:40:05"
+    warehouse: WH-0009
+    sku: SKU-0003
+    action: restock
+    quantity: 76
+  - id: TX-000127
+    timestamp: "2024-01-01T05:43:49"
+    warehouse: WH-0007
+    sku: SKU-0004
+    action: restock
+    quantity: 85
+  - id: TX-000128
+    timestamp: "2024-01-01T05:47:58"
+    warehouse: WH-0009
+    sku: SKU-0000
+    action: sale
+    quantity: 20
+  - id: TX-000129
+    timestamp: "2024-01-01T05:49:18"
+    warehouse: WH-0003
+    sku: SKU-0003
+    action: adjustment
+    quantity: -2
+    reason: audit
+  - id: TX-000130
+    timestamp: "2024-01-01T05:51:08"
+    warehouse: WH-0008
+    sku: SKU-0001
+    action: sale
+    quantity: 6
+  - id: TX-000131
+    timestamp: "2024-01-01T05:51:39"
+    warehouse: WH-0009
+    sku: SKU-0007
+    action: restock
+    quantity: 47
+  - id: TX-000132
+    timestamp: "2024-01-01T05:52:25"
+    warehouse: WH-0004
+    sku: SKU-0007
+    action: sale
+    quantity: 3
+  - id: TX-000133
+    timestamp: "2024-01-01T05:54:54"
+    warehouse: WH-0009
+    sku: SKU-0003
+    action: adjustment
+    quantity: 3
+    reason: audit
+  - id: TX-000134
+    timestamp: "2024-01-01T05:57:19"
+    warehouse: WH-0004
+    sku: SKU-0002
+    action: restock
+    quantity: 19
+  - id: TX-000135
+    timestamp: "2024-01-01T05:58:19"
+    warehouse: WH-0004
+    sku: SKU-0009
+    action: sale
+    quantity: 24
+  - id: TX-000136
+    timestamp: "2024-01-01T06:01:16"
+    warehouse: WH-0007
+    sku: SKU-0004
+    action: restock
+    quantity: 99
+  - id: TX-000137
+    timestamp: "2024-01-01T06:05:12"
+    warehouse: WH-0008
+    sku: SKU-0008
+    action: adjustment
+    quantity: 5
+    reason: correction
+  - id: TX-000138
+    timestamp: "2024-01-01T06:06:23"
+    warehouse: WH-0006
+    sku: SKU-0005
+    action: restock
+    quantity: 87
+  - id: TX-000139
+    timestamp: "2024-01-01T06:09:01"
+    warehouse: WH-0003
+    sku: SKU-0009
+    action: sale
+    quantity: 19
+  - id: TX-000140
+    timestamp: "2024-01-01T06:09:41"
+    warehouse: WH-0004
+    sku: SKU-0009
+    action: adjustment
+    quantity: -9
+    reason: damage
+  - id: TX-000141
+    timestamp: "2024-01-01T06:14:11"
+    warehouse: WH-0007
+    sku: SKU-0004
+    action: restock
+    quantity: 33
+  - id: TX-000142
+    timestamp: "2024-01-01T06:18:24"
+    warehouse: WH-0007
+    sku: SKU-0001
+    action: restock
+    quantity: 70
+  - id: TX-000143
+    timestamp: "2024-01-01T06:21:52"
+    warehouse: WH-0005
+    sku: SKU-0001
+    action: restock
+    quantity: 30
+  - id: TX-000144
+    timestamp: "2024-01-01T06:25:10"
+    warehouse: WH-0007
+    sku: SKU-0004
+    action: restock
+    quantity: 94
+  - id: TX-000145
+    timestamp: "2024-01-01T06:29:05"
+    warehouse: WH-0008
+    sku: SKU-0000
+    action: transfer
+    quantity: 3
+    destination: WH-0007
+  - id: TX-000146
+    timestamp: "2024-01-01T06:32:16"
+    warehouse: WH-0001
+    sku: SKU-0006
+    action: sale
+    quantity: 17
+  - id: TX-000147
+    timestamp: "2024-01-01T06:32:46"
+    warehouse: WH-0008
+    sku: SKU-0007
+    action: transfer
+    quantity: 2
+    destination: WH-0006
+  - id: TX-000148
+    timestamp: "2024-01-01T06:34:52"
+    warehouse: WH-0009
+    sku: SKU-0007
+    action: restock
+    quantity: 90
+  - id: TX-000149
+    timestamp: "2024-01-01T06:39:08"
+    warehouse: WH-0003
+    sku: SKU-0004
+    action: transfer
+    quantity: 5
+    destination: WH-0009
+  - id: TX-000150
+    timestamp: "2024-01-01T06:42:05"
+    warehouse: WH-0007
+    sku: SKU-0001
+    action: restock
+    quantity: 13
+  - id: TX-000151
+    timestamp: "2024-01-01T06:44:37"
+    warehouse: WH-0004
+    sku: SKU-0008
+    action: transfer
+    quantity: 18
+    destination: WH-0000
+  - id: TX-000152
+    timestamp: "2024-01-01T06:48:35"
+    warehouse: WH-0001
+    sku: SKU-0007
+    action: sale
+    quantity: 4
+  - id: TX-000153
+    timestamp: "2024-01-01T06:50:23"
+    warehouse: WH-0004
+    sku: SKU-0008
+    action: restock
+    quantity: 100
+  - id: TX-000154
+    timestamp: "2024-01-01T06:53:12"
+    warehouse: WH-0007
+    sku: SKU-0007
+    action: restock
+    quantity: 41
+  - id: TX-000155
+    timestamp: "2024-01-01T06:57:35"
+    warehouse: WH-0006
+    sku: SKU-0003
+    action: restock
+    quantity: 86
+  - id: TX-000156
+    timestamp: "2024-01-01T07:02:25"
+    warehouse: WH-0002
+    sku: SKU-0001
+    action: transfer
+    quantity: 25
+    destination: WH-0005
+  - id: TX-000157
+    timestamp: "2024-01-01T07:06:27"
+    warehouse: WH-0008
+    sku: SKU-0004
+    action: sale
+    quantity: 1
+  - id: TX-000158
+    timestamp: "2024-01-01T07:09:21"
+    warehouse: WH-0009
+    sku: SKU-0009
+    action: transfer
+    quantity: 28
+    destination: WH-0007
+  - id: TX-000159
+    timestamp: "2024-01-01T07:11:07"
+    warehouse: WH-0007
+    sku: SKU-0005
+    action: restock
+    quantity: 52
+  - id: TX-000160
+    timestamp: "2024-01-01T07:14:50"
+    warehouse: WH-0005
+    sku: SKU-0003
+    action: restock
+    quantity: 99
+  - id: TX-000161
+    timestamp: "2024-01-01T07:17:22"
+    warehouse: WH-0003
+    sku: SKU-0006
+    action: restock
+    quantity: 15
+  - id: TX-000162
+    timestamp: "2024-01-01T07:20:34"
+    warehouse: WH-0006
+    sku: SKU-0006
+    action: transfer
+    quantity: 16
+    destination: WH-0002
+  - id: TX-000163
+    timestamp: "2024-01-01T07:21:22"
+    warehouse: WH-0009
+    sku: SKU-0005
+    action: sale
+    quantity: 4
+  - id: TX-000164
+    timestamp: "2024-01-01T07:25:37"
+    warehouse: WH-0007
+    sku: SKU-0000
+    action: sale
+    quantity: 24
+  - id: TX-000165
+    timestamp: "2024-01-01T07:27:20"
+    warehouse: WH-0002
+    sku: SKU-0001
+    action: restock
+    quantity: 70
+  - id: TX-000166
+    timestamp: "2024-01-01T07:30:05"
+    warehouse: WH-0006
+    sku: SKU-0001
+    action: sale
+    quantity: 11
+  - id: TX-000167
+    timestamp: "2024-01-01T07:33:49"
+    warehouse: WH-0007
+    sku: SKU-0008
+    action: adjustment
+    quantity: -9
+    reason: audit
+  - id: TX-000168
+    timestamp: "2024-01-01T07:36:19"
+    warehouse: WH-0004
+    sku: SKU-0003
+    action: restock
+    quantity: 21
+  - id: TX-000169
+    timestamp: "2024-01-01T07:40:31"
+    warehouse: WH-0001
+    sku: SKU-0007
+    action: adjustment
+    quantity: -5
+    reason: found
+  - id: TX-000170
+    timestamp: "2024-01-01T07:41:15"
+    warehouse: WH-0000
+    sku: SKU-0004
+    action: sale
+    quantity: 12
+  - id: TX-000171
+    timestamp: "2024-01-01T07:44:56"
+    warehouse: WH-0003
+    sku: SKU-0008
+    action: restock
+    quantity: 62
+  - id: TX-000172
+    timestamp: "2024-01-01T07:46:58"
+    warehouse: WH-0001
+    sku: SKU-0009
+    action: sale
+    quantity: 13
+  - id: TX-000173
+    timestamp: "2024-01-01T07:49:31"
+    warehouse: WH-0009
+    sku: SKU-0002
+    action: restock
+    quantity: 39
+  - id: TX-000174
+    timestamp: "2024-01-01T07:53:57"
+    warehouse: WH-0007
+    sku: SKU-0004
+    action: restock
+    quantity: 95
+  - id: TX-000175
+    timestamp: "2024-01-01T07:54:31"
+    warehouse: WH-0007
+    sku: SKU-0004
+    action: transfer
+    quantity: 6
+    destination: WH-0009
+  - id: TX-000176
+    timestamp: "2024-01-01T07:55:38"
+    warehouse: WH-0005
+    sku: SKU-0009
+    action: restock
+    quantity: 48
+  - id: TX-000177
+    timestamp: "2024-01-01T07:59:45"
+    warehouse: WH-0007
+    sku: SKU-0004
+    action: transfer
+    quantity: 13
+    destination: WH-0003
+  - id: TX-000178
+    timestamp: "2024-01-01T08:04:22"
+    warehouse: WH-0006
+    sku: SKU-0009
+    action: sale
+    quantity: 12
+  - id: TX-000179
+    timestamp: "2024-01-01T08:07:23"
+    warehouse: WH-0004
+    sku: SKU-0000
+    action: adjustment
+    quantity: 2
+    reason: found
+  - id: TX-000180
+    timestamp: "2024-01-01T08:07:57"
+    warehouse: WH-0000
+    sku: SKU-0009
+    action: restock
+    quantity: 73
+  - id: TX-000181
+    timestamp: "2024-01-01T08:10:53"
+    warehouse: WH-0003
+    sku: SKU-0009
+    action: transfer
+    quantity: 8
+    destination: WH-0006
+  - id: TX-000182
+    timestamp: "2024-01-01T08:13:00"
+    warehouse: WH-0002
+    sku: SKU-0001
+    action: restock
+    quantity: 90
+  - id: TX-000183
+    timestamp: "2024-01-01T08:13:50"
+    warehouse: WH-0007
+    sku: SKU-0000
+    action: sale
+    quantity: 19
+  - id: TX-000184
+    timestamp: "2024-01-01T08:17:26"
+    warehouse: WH-0001
+    sku: SKU-0004
+    action: transfer
+    quantity: 24
+    destination: WH-0006
+  - id: TX-000185
+    timestamp: "2024-01-01T08:21:28"
+    warehouse: WH-0002
+    sku: SKU-0008
+    action: sale
+    quantity: 12
+  - id: TX-000186
+    timestamp: "2024-01-01T08:26:14"
+    warehouse: WH-0002
+    sku: SKU-0004
+    action: adjustment
+    quantity: 5
+    reason: found
+  - id: TX-000187
+    timestamp: "2024-01-01T08:29:37"
+    warehouse: WH-0007
+    sku: SKU-0001
+    action: transfer
+    quantity: 25
+    destination: WH-0002
+  - id: TX-000188
+    timestamp: "2024-01-01T08:32:02"
+    warehouse: WH-0006
+    sku: SKU-0008
+    action: transfer
+    quantity: 3
+    destination: WH-0005
+  - id: TX-000189
+    timestamp: "2024-01-01T08:35:54"
+    warehouse: WH-0008
+    sku: SKU-0001
+    action: sale
+    quantity: 15
+  - id: TX-000190
+    timestamp: "2024-01-01T08:39:32"
+    warehouse: WH-0004
+    sku: SKU-0009
+    action: transfer
+    quantity: 27
+    destination: WH-0007
+  - id: TX-000191
+    timestamp: "2024-01-01T08:43:12"
+    warehouse: WH-0003
+    sku: SKU-0007
+    action: sale
+    quantity: 1
+  - id: TX-000192
+    timestamp: "2024-01-01T08:46:29"
+    warehouse: WH-0003
+    sku: SKU-0001
+    action: adjustment
+    quantity: 10
+    reason: correction
+  - id: TX-000193
+    timestamp: "2024-01-01T08:49:33"
+    warehouse: WH-0001
+    sku: SKU-0002
+    action: restock
+    quantity: 15
+  - id: TX-000194
+    timestamp: "2024-01-01T08:50:22"
+    warehouse: WH-0007
+    sku: SKU-0001
+    action: sale
+    quantity: 4
+  - id: TX-000195
+    timestamp: "2024-01-01T08:52:52"
+    warehouse: WH-0002
+    sku: SKU-0006
+    action: transfer
+    quantity: 12
+    destination: WH-0008
+  - id: TX-000196
+    timestamp: "2024-01-01T08:56:56"
+    warehouse: WH-0002
+    sku: SKU-0006
+    action: restock
+    quantity: 93
+  - id: TX-000197
+    timestamp: "2024-01-01T08:58:16"
+    warehouse: WH-0009
+    sku: SKU-0006
+    action: transfer
+    quantity: 2
+    destination: WH-0004
+  - id: TX-000198
+    timestamp: "2024-01-01T09:01:55"
+    warehouse: WH-0007
+    sku: SKU-0003
+    action: sale
+    quantity: 12
+  - id: TX-000199
+    timestamp: "2024-01-01T09:03:15"
+    warehouse: WH-0005
+    sku: SKU-0008
+    action: adjustment
+    quantity: 10
+    reason: found
+  - id: TX-000200
+    timestamp: "2024-01-01T09:04:16"
+    warehouse: WH-0003
+    sku: SKU-0001
+    action: sale
+    quantity: 15
+  - id: TX-000201
+    timestamp: "2024-01-01T09:05:32"
+    warehouse: WH-0009
+    sku: SKU-0000
+    action: transfer
+    quantity: 26
+    destination: WH-0000
+  - id: TX-000202
+    timestamp: "2024-01-01T09:08:52"
+    warehouse: WH-0002
+    sku: SKU-0009
+    action: sale
+    quantity: 7
+  - id: TX-000203
+    timestamp: "2024-01-01T09:09:57"
+    warehouse: WH-0008
+    sku: SKU-0003
+    action: transfer
+    quantity: 27
+    destination: WH-0003
+  - id: TX-000204
+    timestamp: "2024-01-01T09:12:26"
+    warehouse: WH-0002
+    sku: SKU-0009
+    action: sale
+    quantity: 1
+  - id: TX-000205
+    timestamp: "2024-01-01T09:15:17"
+    warehouse: WH-0002
+    sku: SKU-0002
+    action: transfer
+    quantity: 9
+    destination: WH-0009
+  - id: TX-000206
+    timestamp: "2024-01-01T09:17:16"
+    warehouse: WH-0000
+    sku: SKU-0002
+    action: sale
+    quantity: 1
+  - id: TX-000207
+    timestamp: "2024-01-01T09:20:49"
+    warehouse: WH-0003
+    sku: SKU-0009
+    action: transfer
+    quantity: 1
+    destination: WH-0006
+  - id: TX-000208
+    timestamp: "2024-01-01T09:22:48"
+    warehouse: WH-0002
+    sku: SKU-0006
+    action: sale
+    quantity: 17
+  - id: TX-000209
+    timestamp: "2024-01-01T09:24:16"
+    warehouse: WH-0007
+    sku: SKU-0007
+    action: transfer
+    quantity: 17
+    destination: WH-0005
+  - id: TX-000210
+    timestamp: "2024-01-01T09:25:41"
+    warehouse: WH-0003
+    sku: SKU-0009
+    action: restock
+    quantity: 15
+  - id: TX-000211
+    timestamp: "2024-01-01T09:30:37"
+    warehouse: WH-0000
+    sku: SKU-0000
+    action: sale
+    quantity: 16
+  - id: TX-000212
+    timestamp: "2024-01-01T09:34:32"
+    warehouse: WH-0001
+    sku: SKU-0007
+    action: restock
+    quantity: 66
+  - id: TX-000213
+    timestamp: "2024-01-01T09:35:39"
+    warehouse: WH-0005
+    sku: SKU-0009
+    action: transfer
+    quantity: 3
+    destination: WH-0002
+  - id: TX-000214
+    timestamp: "2024-01-01T09:37:13"
+    warehouse: WH-0009
+    sku: SKU-0008
+    action: sale
+    quantity: 23
+  - id: TX-000215
+    timestamp: "2024-01-01T09:40:29"
+    warehouse: WH-0009
+    sku: SKU-0008
+    action: sale
+    quantity: 10
+  - id: TX-000216
+    timestamp: "2024-01-01T09:44:51"
+    warehouse: WH-0006
+    sku: SKU-0001
+    action: restock
+    quantity: 99
+  - id: TX-000217
+    timestamp: "2024-01-01T09:46:19"
+    warehouse: WH-0008
+    sku: SKU-0003
+    action: transfer
+    quantity: 15
+    destination: WH-0006
+  - id: TX-000218
+    timestamp: "2024-01-01T09:48:45"
+    warehouse: WH-0007
+    sku: SKU-0006
+    action: restock
+    quantity: 63
+  - id: TX-000219
+    timestamp: "2024-01-01T09:50:03"
+    warehouse: WH-0005
+    sku: SKU-0004
+    action: sale
+    quantity: 12
+  - id: TX-000220
+    timestamp: "2024-01-01T09:51:51"
+    warehouse: WH-0007
+    sku: SKU-0001
+    action: transfer
+    quantity: 27
+    destination: WH-0001
+  - id: TX-000221
+    timestamp: "2024-01-01T09:53:04"
+    warehouse: WH-0001
+    sku: SKU-0005
+    action: sale
+    quantity: 5
+  - id: TX-000222
+    timestamp: "2024-01-01T09:54:04"
+    warehouse: WH-0008
+    sku: SKU-0008
+    action: restock
+    quantity: 52
+  - id: TX-000223
+    timestamp: "2024-01-01T09:55:36"
+    warehouse: WH-0006
+    sku: SKU-0000
+    action: restock
+    quantity: 46
+  - id: TX-000224
+    timestamp: "2024-01-01T09:58:45"
+    warehouse: WH-0009
+    sku: SKU-0008
+    action: sale
+    quantity: 7
+  - id: TX-000225
+    timestamp: "2024-01-01T10:00:34"
+    warehouse: WH-0003
+    sku: SKU-0001
+    action: transfer
+    quantity: 28
+    destination: WH-0006
+  - id: TX-000226
+    timestamp: "2024-01-01T10:04:12"
+    warehouse: WH-0004
+    sku: SKU-0009
+    action: sale
+    quantity: 8
+  - id: TX-000227
+    timestamp: "2024-01-01T10:08:21"
+    warehouse: WH-0009
+    sku: SKU-0009
+    action: transfer
+    quantity: 1
+    destination: WH-0008
+  - id: TX-000228
+    timestamp: "2024-01-01T10:11:07"
+    warehouse: WH-0004
+    sku: SKU-0004
+    action: sale
+    quantity: 11
+  - id: TX-000229
+    timestamp: "2024-01-01T10:14:36"
+    warehouse: WH-0002
+    sku: SKU-0009
+    action: sale
+    quantity: 22
+  - id: TX-000230
+    timestamp: "2024-01-01T10:18:31"
+    warehouse: WH-0000
+    sku: SKU-0001
+    action: sale
+    quantity: 24
+  - id: TX-000231
+    timestamp: "2024-01-01T10:20:51"
+    warehouse: WH-0007
+    sku: SKU-0005
+    action: sale
+    quantity: 6
+  - id: TX-000232
+    timestamp: "2024-01-01T10:24:30"
+    warehouse: WH-0005
+    sku: SKU-0009
+    action: sale
+    quantity: 20
+  - id: TX-000233
+    timestamp: "2024-01-01T10:25:43"
+    warehouse: WH-0002
+    sku: SKU-0002
+    action: transfer
+    quantity: 22
+    destination: WH-0000
+  - id: TX-000234
+    timestamp: "2024-01-01T10:26:54"
+    warehouse: WH-0006
+    sku: SKU-0007
+    action: sale
+    quantity: 20
+  - id: TX-000235
+    timestamp: "2024-01-01T10:31:10"
+    warehouse: WH-0003
+    sku: SKU-0008
+    action: restock
+    quantity: 24
+  - id: TX-000236
+    timestamp: "2024-01-01T10:34:36"
+    warehouse: WH-0004
+    sku: SKU-0009
+    action: restock
+    quantity: 72
+  - id: TX-000237
+    timestamp: "2024-01-01T10:39:35"
+    warehouse: WH-0000
+    sku: SKU-0003
+    action: transfer
+    quantity: 20
+    destination: WH-0007
+  - id: TX-000238
+    timestamp: "2024-01-01T10:40:33"
+    warehouse: WH-0004
+    sku: SKU-0003
+    action: sale
+    quantity: 25
+  - id: TX-000239
+    timestamp: "2024-01-01T10:42:13"
+    warehouse: WH-0004
+    sku: SKU-0005
+    action: transfer
+    quantity: 1
+    destination: WH-0001
+  - id: TX-000240
+    timestamp: "2024-01-01T10:46:57"
+    warehouse: WH-0002
+    sku: SKU-0002
+    action: transfer
+    quantity: 18
+    destination: WH-0007
+  - id: TX-000241
+    timestamp: "2024-01-01T10:49:24"
+    warehouse: WH-0005
+    sku: SKU-0001
+    action: restock
+    quantity: 60
+  - id: TX-000242
+    timestamp: "2024-01-01T10:50:15"
+    warehouse: WH-0007
+    sku: SKU-0001
+    action: restock
+    quantity: 50
+  - id: TX-000243
+    timestamp: "2024-01-01T10:54:24"
+    warehouse: WH-0006
+    sku: SKU-0004
+    action: restock
+    quantity: 24
+  - id: TX-000244
+    timestamp: "2024-01-01T10:58:21"
+    warehouse: WH-0005
+    sku: SKU-0002
+    action: sale
+    quantity: 20
+  - id: TX-000245
+    timestamp: "2024-01-01T11:02:46"
+    warehouse: WH-0005
+    sku: SKU-0001
+    action: transfer
+    quantity: 28
+    destination: WH-0007
+  - id: TX-000246
+    timestamp: "2024-01-01T11:04:10"
+    warehouse: WH-0009
+    sku: SKU-0006
+    action: sale
+    quantity: 17
+  - id: TX-000247
+    timestamp: "2024-01-01T11:05:20"
+    warehouse: WH-0004
+    sku: SKU-0005
+    action: sale
+    quantity: 8
+  - id: TX-000248
+    timestamp: "2024-01-01T11:08:40"
+    warehouse: WH-0001
+    sku: SKU-0008
+    action: transfer
+    quantity: 17
+    destination: WH-0002
+  - id: TX-000249
+    timestamp: "2024-01-01T11:13:31"
+    warehouse: WH-0005
+    sku: SKU-0005
+    action: sale
+    quantity: 24
+  - id: TX-000250
+    timestamp: "2024-01-01T11:15:16"
+    warehouse: WH-0002
+    sku: SKU-0004
+    action: sale
+    quantity: 7
+  - id: TX-000251
+    timestamp: "2024-01-01T11:17:14"
+    warehouse: WH-0001
+    sku: SKU-0002
+    action: restock
+    quantity: 90
+  - id: TX-000252
+    timestamp: "2024-01-01T11:21:56"
+    warehouse: WH-0009
+    sku: SKU-0009
+    action: restock
+    quantity: 67
+  - id: TX-000253
+    timestamp: "2024-01-01T11:25:11"
+    warehouse: WH-0005
+    sku: SKU-0002
+    action: transfer
+    quantity: 3
+    destination: WH-0008
+  - id: TX-000254
+    timestamp: "2024-01-01T11:29:41"
+    warehouse: WH-0004
+    sku: SKU-0004
+    action: restock
+    quantity: 85
+  - id: TX-000255
+    timestamp: "2024-01-01T11:30:39"
+    warehouse: WH-0001
+    sku: SKU-0004
+    action: sale
+    quantity: 15
+  - id: TX-000256
+    timestamp: "2024-01-01T11:35:00"
+    warehouse: WH-0005
+    sku: SKU-0004
+    action: sale
+    quantity: 3
+  - id: TX-000257
+    timestamp: "2024-01-01T11:36:16"
+    warehouse: WH-0008
+    sku: SKU-0006
+    action: restock
+    quantity: 69
+  - id: TX-000258
+    timestamp: "2024-01-01T11:37:07"
+    warehouse: WH-0009
+    sku: SKU-0003
+    action: restock
+    quantity: 51
+  - id: TX-000259
+    timestamp: "2024-01-01T11:41:40"
+    warehouse: WH-0000
+    sku: SKU-0007
+    action: restock
+    quantity: 23
+  - id: TX-000260
+    timestamp: "2024-01-01T11:45:05"
+    warehouse: WH-0001
+    sku: SKU-0008
+    action: adjustment
+    quantity: 10
+    reason: damage
+  - id: TX-000261
+    timestamp: "2024-01-01T11:45:55"
+    warehouse: WH-0007
+    sku: SKU-0007
+    action: sale
+    quantity: 17
+  - id: TX-000262
+    timestamp: "2024-01-01T11:50:52"
+    warehouse: WH-0005
+    sku: SKU-0005
+    action: restock
+    quantity: 46
+  - id: TX-000263
+    timestamp: "2024-01-01T11:54:40"
+    warehouse: WH-0005
+    sku: SKU-0009
+    action: restock
+    quantity: 16
+  - id: TX-000264
+    timestamp: "2024-01-01T11:58:01"
+    warehouse: WH-0001
+    sku: SKU-0008
+    action: sale
+    quantity: 22
+  - id: TX-000265
+    timestamp: "2024-01-01T12:01:48"
+    warehouse: WH-0009
+    sku: SKU-0002
+    action: sale
+    quantity: 11
+  - id: TX-000266
+    timestamp: "2024-01-01T12:02:59"
+    warehouse: WH-0002
+    sku: SKU-0005
+    action: restock
+    quantity: 49
+  - id: TX-000267
+    timestamp: "2024-01-01T12:06:49"
+    warehouse: WH-0001
+    sku: SKU-0004
+    action: sale
+    quantity: 18
+  - id: TX-000268
+    timestamp: "2024-01-01T12:10:31"
+    warehouse: WH-0005
+    sku: SKU-0002
+    action: restock
+    quantity: 95
+  - id: TX-000269
+    timestamp: "2024-01-01T12:15:30"
+    warehouse: WH-0006
+    sku: SKU-0008
+    action: sale
+    quantity: 12
+  - id: TX-000270
+    timestamp: "2024-01-01T12:16:09"
+    warehouse: WH-0002
+    sku: SKU-0003
+    action: sale
+    quantity: 11
+  - id: TX-000271
+    timestamp: "2024-01-01T12:20:47"
+    warehouse: WH-0002
+    sku: SKU-0002
+    action: sale
+    quantity: 3
+  - id: TX-000272
+    timestamp: "2024-01-01T12:23:48"
+    warehouse: WH-0001
+    sku: SKU-0008
+    action: transfer
+    quantity: 27
+    destination: WH-0009
+  - id: TX-000273
+    timestamp: "2024-01-01T12:28:47"
+    warehouse: WH-0005
+    sku: SKU-0009
+    action: sale
+    quantity: 5
+  - id: TX-000274
+    timestamp: "2024-01-01T12:32:29"
+    warehouse: WH-0002
+    sku: SKU-0009
+    action: sale
+    quantity: 6
+  - id: TX-000275
+    timestamp: "2024-01-01T12:36:43"
+    warehouse: WH-0005
+    sku: SKU-0003
+    action: sale
+    quantity: 15
+  - id: TX-000276
+    timestamp: "2024-01-01T12:39:38"
+    warehouse: WH-0007
+    sku: SKU-0003
+    action: transfer
+    quantity: 8
+    destination: WH-0009
+  - id: TX-000277
+    timestamp: "2024-01-01T12:42:46"
+    warehouse: WH-0007
+    sku: SKU-0003
+    action: adjustment
+    quantity: 1
+    reason: correction
+  - id: TX-000278
+    timestamp: "2024-01-01T12:47:12"
+    warehouse: WH-0006
+    sku: SKU-0008
+    action: transfer
+    quantity: 14
+    destination: WH-0009
+  - id: TX-000279
+    timestamp: "2024-01-01T12:49:04"
+    warehouse: WH-0009
+    sku: SKU-0002
+    action: transfer
+    quantity: 2
+    destination: WH-0004
+  - id: TX-000280
+    timestamp: "2024-01-01T12:53:40"
+    warehouse: WH-0008
+    sku: SKU-0001
+    action: transfer
+    quantity: 28
+    destination: WH-0009
+  - id: TX-000281
+    timestamp: "2024-01-01T12:55:13"
+    warehouse: WH-0002
+    sku: SKU-0004
+    action: sale
+    quantity: 15
+  - id: TX-000282
+    timestamp: "2024-01-01T13:00:05"
+    warehouse: WH-0006
+    sku: SKU-0001
+    action: sale
+    quantity: 8
+  - id: TX-000283
+    timestamp: "2024-01-01T13:04:25"
+    warehouse: WH-0000
+    sku: SKU-0006
+    action: transfer
+    quantity: 13
+    destination: WH-0001
+  - id: TX-000284
+    timestamp: "2024-01-01T13:09:12"
+    warehouse: WH-0006
+    sku: SKU-0001
+    action: sale
+    quantity: 12
+  - id: TX-000285
+    timestamp: "2024-01-01T13:11:36"
+    warehouse: WH-0001
+    sku: SKU-0005
+    action: sale
+    quantity: 5
+  - id: TX-000286
+    timestamp: "2024-01-01T13:13:16"
+    warehouse: WH-0007
+    sku: SKU-0002
+    action: sale
+    quantity: 25
+  - id: TX-000287
+    timestamp: "2024-01-01T13:17:46"
+    warehouse: WH-0000
+    sku: SKU-0001
+    action: restock
+    quantity: 12
+  - id: TX-000288
+    timestamp: "2024-01-01T13:20:27"
+    warehouse: WH-0002
+    sku: SKU-0008
+    action: sale
+    quantity: 24
+  - id: TX-000289
+    timestamp: "2024-01-01T13:25:27"
+    warehouse: WH-0004
+    sku: SKU-0003
+    action: restock
+    quantity: 48
+  - id: TX-000290
+    timestamp: "2024-01-01T13:26:59"
+    warehouse: WH-0006
+    sku: SKU-0009
+    action: sale
+    quantity: 15
+  - id: TX-000291
+    timestamp: "2024-01-01T13:28:01"
+    warehouse: WH-0007
+    sku: SKU-0009
+    action: sale
+    quantity: 18
+  - id: TX-000292
+    timestamp: "2024-01-01T13:28:39"
+    warehouse: WH-0009
+    sku: SKU-0003
+    action: restock
+    quantity: 28
+  - id: TX-000293
+    timestamp: "2024-01-01T13:31:38"
+    warehouse: WH-0009
+    sku: SKU-0005
+    action: restock
+    quantity: 40
+  - id: TX-000294
+    timestamp: "2024-01-01T13:35:41"
+    warehouse: WH-0001
+    sku: SKU-0008
+    action: sale
+    quantity: 12
+  - id: TX-000295
+    timestamp: "2024-01-01T13:36:45"
+    warehouse: WH-0008
+    sku: SKU-0008
+    action: adjustment
+    quantity: 6
+    reason: audit
+  - id: TX-000296
+    timestamp: "2024-01-01T13:40:34"
+    warehouse: WH-0000
+    sku: SKU-0006
+    action: transfer
+    quantity: 9
+    destination: WH-0006
+  - id: TX-000297
+    timestamp: "2024-01-01T13:41:12"
+    warehouse: WH-0001
+    sku: SKU-0005
+    action: sale
+    quantity: 8
+  - id: TX-000298
+    timestamp: "2024-01-01T13:42:35"
+    warehouse: WH-0005
+    sku: SKU-0002
+    action: transfer
+    quantity: 12
+    destination: WH-0000
+  - id: TX-000299
+    timestamp: "2024-01-01T13:45:58"
+    warehouse: WH-0002
+    sku: SKU-0007
+    action: transfer
+    quantity: 21
+    destination: WH-0008
+  - id: TX-000300
+    timestamp: "2024-01-01T13:48:01"
+    warehouse: WH-0001
+    sku: SKU-0007
+    action: transfer
+    quantity: 10
+    destination: WH-0000
+  - id: TX-000301
+    timestamp: "2024-01-01T13:50:14"
+    warehouse: WH-0003
+    sku: SKU-0000
+    action: sale
+    quantity: 11
+  - id: TX-000302
+    timestamp: "2024-01-01T13:53:22"
+    warehouse: WH-0008
+    sku: SKU-0007
+    action: restock
+    quantity: 42
+  - id: TX-000303
+    timestamp: "2024-01-01T13:54:10"
+    warehouse: WH-0003
+    sku: SKU-0004
+    action: transfer
+    quantity: 28
+    destination: WH-0006
+  - id: TX-000304
+    timestamp: "2024-01-01T13:55:04"
+    warehouse: WH-0005
+    sku: SKU-0004
+    action: transfer
+    quantity: 26
+    destination: WH-0001
+  - id: TX-000305
+    timestamp: "2024-01-01T13:58:42"
+    warehouse: WH-0006
+    sku: SKU-0007
+    action: restock
+    quantity: 59
+  - id: TX-000306
+    timestamp: "2024-01-01T14:02:05"
+    warehouse: WH-0007
+    sku: SKU-0007
+    action: adjustment
+    quantity: 1
+    reason: found
+  - id: TX-000307
+    timestamp: "2024-01-01T14:03:17"
+    warehouse: WH-0001
+    sku: SKU-0006
+    action: transfer
+    quantity: 18
+    destination: WH-0003
+  - id: TX-000308
+    timestamp: "2024-01-01T14:06:17"
+    warehouse: WH-0001
+    sku: SKU-0005
+    action: sale
+    quantity: 22
+  - id: TX-000309
+    timestamp: "2024-01-01T14:09:18"
+    warehouse: WH-0009
+    sku: SKU-0006
+    action: sale
+    quantity: 6
+  - id: TX-000310
+    timestamp: "2024-01-01T14:13:35"
+    warehouse: WH-0000
+    sku: SKU-0005
+    action: sale
+    quantity: 20
+  - id: TX-000311
+    timestamp: "2024-01-01T14:17:47"
+    warehouse: WH-0000
+    sku: SKU-0001
+    action: sale
+    quantity: 22
+  - id: TX-000312
+    timestamp: "2024-01-01T14:21:44"
+    warehouse: WH-0002
+    sku: SKU-0000
+    action: sale
+    quantity: 5
+  - id: TX-000313
+    timestamp: "2024-01-01T14:25:58"
+    warehouse: WH-0001
+    sku: SKU-0003
+    action: sale
+    quantity: 25
+  - id: TX-000314
+    timestamp: "2024-01-01T14:29:35"
+    warehouse: WH-0009
+    sku: SKU-0000
+    action: sale
+    quantity: 20
+  - id: TX-000315
+    timestamp: "2024-01-01T14:31:23"
+    warehouse: WH-0005
+    sku: SKU-0005
+    action: transfer
+    quantity: 25
+    destination: WH-0008
+  - id: TX-000316
+    timestamp: "2024-01-01T14:32:32"
+    warehouse: WH-0008
+    sku: SKU-0005
+    action: restock
+    quantity: 60
+  - id: TX-000317
+    timestamp: "2024-01-01T14:35:42"
+    warehouse: WH-0003
+    sku: SKU-0001
+    action: restock
+    quantity: 13
+  - id: TX-000318
+    timestamp: "2024-01-01T14:37:47"
+    warehouse: WH-0006
+    sku: SKU-0008
+    action: restock
+    quantity: 25
+  - id: TX-000319
+    timestamp: "2024-01-01T14:40:31"
+    warehouse: WH-0007
+    sku: SKU-0003
+    action: transfer
+    quantity: 23
+    destination: WH-0004
+  - id: TX-000320
+    timestamp: "2024-01-01T14:45:12"
+    warehouse: WH-0002
+    sku: SKU-0001
+    action: sale
+    quantity: 15
+  - id: TX-000321
+    timestamp: "2024-01-01T14:47:10"
+    warehouse: WH-0007
+    sku: SKU-0001
+    action: transfer
+    quantity: 22
+    destination: WH-0005
+  - id: TX-000322
+    timestamp: "2024-01-01T14:50:37"
+    warehouse: WH-0008
+    sku: SKU-0008
+    action: transfer
+    quantity: 29
+    destination: WH-0004
+  - id: TX-000323
+    timestamp: "2024-01-01T14:53:40"
+    warehouse: WH-0002
+    sku: SKU-0005
+    action: transfer
+    quantity: 8
+    destination: WH-0009
+  - id: TX-000324
+    timestamp: "2024-01-01T14:55:12"
+    warehouse: WH-0002
+    sku: SKU-0003
+    action: adjustment
+    quantity: 5
+    reason: audit
+  - id: TX-000325
+    timestamp: "2024-01-01T14:58:46"
+    warehouse: WH-0005
+    sku: SKU-0007
+    action: restock
+    quantity: 80
+  - id: TX-000326
+    timestamp: "2024-01-01T15:00:22"
+    warehouse: WH-0001
+    sku: SKU-0001
+    action: restock
+    quantity: 49
+  - id: TX-000327
+    timestamp: "2024-01-01T15:04:15"
+    warehouse: WH-0007
+    sku: SKU-0008
+    action: adjustment
+    quantity: 3
+    reason: correction
+  - id: TX-000328
+    timestamp: "2024-01-01T15:05:22"
+    warehouse: WH-0005
+    sku: SKU-0001
+    action: sale
+    quantity: 15
+  - id: TX-000329
+    timestamp: "2024-01-01T15:09:50"
+    warehouse: WH-0005
+    sku: SKU-0002
+    action: transfer
+    quantity: 21
+    destination: WH-0009
+  - id: TX-000330
+    timestamp: "2024-01-01T15:11:53"
+    warehouse: WH-0002
+    sku: SKU-0006
+    action: transfer
+    quantity: 30
+    destination: WH-0009
+  - id: TX-000331
+    timestamp: "2024-01-01T15:12:51"
+    warehouse: WH-0008
+    sku: SKU-0002
+    action: transfer
+    quantity: 6
+    destination: WH-0004
+  - id: TX-000332
+    timestamp: "2024-01-01T15:14:43"
+    warehouse: WH-0003
+    sku: SKU-0005
+    action: sale
+    quantity: 17
+  - id: TX-000333
+    timestamp: "2024-01-01T15:17:38"
+    warehouse: WH-0004
+    sku: SKU-0003
+    action: transfer
+    quantity: 9
+    destination: WH-0009
+  - id: TX-000334
+    timestamp: "2024-01-01T15:19:12"
+    warehouse: WH-0009
+    sku: SKU-0008
+    action: restock
+    quantity: 21
+  - id: TX-000335
+    timestamp: "2024-01-01T15:23:59"
+    warehouse: WH-0009
+    sku: SKU-0009
+    action: restock
+    quantity: 29
+  - id: TX-000336
+    timestamp: "2024-01-01T15:25:56"
+    warehouse: WH-0009
+    sku: SKU-0005
+    action: transfer
+    quantity: 27
+    destination: WH-0000
+  - id: TX-000337
+    timestamp: "2024-01-01T15:26:40"
+    warehouse: WH-0009
+    sku: SKU-0004
+    action: sale
+    quantity: 21
+  - id: TX-000338
+    timestamp: "2024-01-01T15:28:57"
+    warehouse: WH-0006
+    sku: SKU-0009
+    action: transfer
+    quantity: 16
+    destination: WH-0000
+  - id: TX-000339
+    timestamp: "2024-01-01T15:31:55"
+    warehouse: WH-0004
+    sku: SKU-0007
+    action: restock
+    quantity: 41
+  - id: TX-000340
+    timestamp: "2024-01-01T15:35:52"
+    warehouse: WH-0001
+    sku: SKU-0000
+    action: sale
+    quantity: 6
+  - id: TX-000341
+    timestamp: "2024-01-01T15:40:07"
+    warehouse: WH-0007
+    sku: SKU-0003
+    action: restock
+    quantity: 53
+  - id: TX-000342
+    timestamp: "2024-01-01T15:41:50"
+    warehouse: WH-0005
+    sku: SKU-0005
+    action: sale
+    quantity: 13
+  - id: TX-000343
+    timestamp: "2024-01-01T15:43:26"
+    warehouse: WH-0008
+    sku: SKU-0008
+    action: transfer
+    quantity: 11
+    destination: WH-0001
+  - id: TX-000344
+    timestamp: "2024-01-01T15:45:59"
+    warehouse: WH-0004
+    sku: SKU-0007
+    action: restock
+    quantity: 41
+  - id: TX-000345
+    timestamp: "2024-01-01T15:47:41"
+    warehouse: WH-0004
+    sku: SKU-0006
+    action: sale
+    quantity: 20
+  - id: TX-000346
+    timestamp: "2024-01-01T15:51:45"
+    warehouse: WH-0002
+    sku: SKU-0005
+    action: sale
+    quantity: 19
+  - id: TX-000347
+    timestamp: "2024-01-01T15:54:55"
+    warehouse: WH-0002
+    sku: SKU-0007
+    action: sale
+    quantity: 17
+  - id: TX-000348
+    timestamp: "2024-01-01T15:59:24"
+    warehouse: WH-0004
+    sku: SKU-0007
+    action: restock
+    quantity: 12
+  - id: TX-000349
+    timestamp: "2024-01-01T16:00:40"
+    warehouse: WH-0008
+    sku: SKU-0007
+    action: adjustment
+    quantity: -3
+    reason: damage
+  - id: TX-000350
+    timestamp: "2024-01-01T16:04:10"
+    warehouse: WH-0004
+    sku: SKU-0007
+    action: sale
+    quantity: 20
+  - id: TX-000351
+    timestamp: "2024-01-01T16:08:40"
+    warehouse: WH-0000
+    sku: SKU-0001
+    action: sale
+    quantity: 14
+  - id: TX-000352
+    timestamp: "2024-01-01T16:10:18"
+    warehouse: WH-0005
+    sku: SKU-0006
+    action: transfer
+    quantity: 2
+    destination: WH-0006
+  - id: TX-000353
+    timestamp: "2024-01-01T16:14:13"
+    warehouse: WH-0008
+    sku: SKU-0003
+    action: sale
+    quantity: 12
+  - id: TX-000354
+    timestamp: "2024-01-01T16:17:10"
+    warehouse: WH-0008
+    sku: SKU-0007
+    action: sale
+    quantity: 25
+  - id: TX-000355
+    timestamp: "2024-01-01T16:20:03"
+    warehouse: WH-0009
+    sku: SKU-0009
+    action: transfer
+    quantity: 5
+    destination: WH-0001
+  - id: TX-000356
+    timestamp: "2024-01-01T16:21:22"
+    warehouse: WH-0005
+    sku: SKU-0008
+    action: sale
+    quantity: 12
+  - id: TX-000357
+    timestamp: "2024-01-01T16:23:05"
+    warehouse: WH-0008
+    sku: SKU-0006
+    action: sale
+    quantity: 17
+  - id: TX-000358
+    timestamp: "2024-01-01T16:23:55"
+    warehouse: WH-0002
+    sku: SKU-0005
+    action: sale
+    quantity: 16
+  - id: TX-000359
+    timestamp: "2024-01-01T16:28:50"
+    warehouse: WH-0009
+    sku: SKU-0008
+    action: restock
+    quantity: 27
+  - id: TX-000360
+    timestamp: "2024-01-01T16:32:07"
+    warehouse: WH-0005
+    sku: SKU-0002
+    action: adjustment
+    quantity: 2
+    reason: found
+  - id: TX-000361
+    timestamp: "2024-01-01T16:35:29"
+    warehouse: WH-0008
+    sku: SKU-0008
+    action: restock
+    quantity: 72
+  - id: TX-000362
+    timestamp: "2024-01-01T16:38:32"
+    warehouse: WH-0000
+    sku: SKU-0005
+    action: restock
+    quantity: 52
+  - id: TX-000363
+    timestamp: "2024-01-01T16:39:58"
+    warehouse: WH-0009
+    sku: SKU-0004
+    action: adjustment
+    quantity: 10
+    reason: audit
+  - id: TX-000364
+    timestamp: "2024-01-01T16:44:30"
+    warehouse: WH-0009
+    sku: SKU-0009
+    action: sale
+    quantity: 8
+  - id: TX-000365
+    timestamp: "2024-01-01T16:45:26"
+    warehouse: WH-0002
+    sku: SKU-0008
+    action: restock
+    quantity: 90
+  - id: TX-000366
+    timestamp: "2024-01-01T16:49:10"
+    warehouse: WH-0003
+    sku: SKU-0000
+    action: sale
+    quantity: 19
+  - id: TX-000367
+    timestamp: "2024-01-01T16:50:36"
+    warehouse: WH-0007
+    sku: SKU-0005
+    action: sale
+    quantity: 14
+  - id: TX-000368
+    timestamp: "2024-01-01T16:52:23"
+    warehouse: WH-0003
+    sku: SKU-0006
+    action: restock
+    quantity: 74
+  - id: TX-000369
+    timestamp: "2024-01-01T16:56:54"
+    warehouse: WH-0000
+    sku: SKU-0002
+    action: transfer
+    quantity: 7
+    destination: WH-0009
+  - id: TX-000370
+    timestamp: "2024-01-01T17:00:10"
+    warehouse: WH-0007
+    sku: SKU-0008
+    action: adjustment
+    quantity: 2
+    reason: found
+  - id: TX-000371
+    timestamp: "2024-01-01T17:02:08"
+    warehouse: WH-0008
+    sku: SKU-0005
+    action: restock
+    quantity: 79
+  - id: TX-000372
+    timestamp: "2024-01-01T17:05:39"
+    warehouse: WH-0004
+    sku: SKU-0009
+    action: transfer
+    quantity: 7
+    destination: WH-0008
+  - id: TX-000373
+    timestamp: "2024-01-01T17:08:15"
+    warehouse: WH-0004
+    sku: SKU-0003
+    action: sale
+    quantity: 10
+  - id: TX-000374
+    timestamp: "2024-01-01T17:11:12"
+    warehouse: WH-0007
+    sku: SKU-0005
+    action: transfer
+    quantity: 12
+    destination: WH-0008
+  - id: TX-000375
+    timestamp: "2024-01-01T17:14:02"
+    warehouse: WH-0009
+    sku: SKU-0008
+    action: sale
+    quantity: 13
+  - id: TX-000376
+    timestamp: "2024-01-01T17:17:54"
+    warehouse: WH-0002
+    sku: SKU-0004
+    action: transfer
+    quantity: 10
+    destination: WH-0000
+  - id: TX-000377
+    timestamp: "2024-01-01T17:19:04"
+    warehouse: WH-0007
+    sku: SKU-0004
+    action: sale
+    quantity: 24
+  - id: TX-000378
+    timestamp: "2024-01-01T17:23:39"
+    warehouse: WH-0008
+    sku: SKU-0004
+    action: sale
+    quantity: 18
+  - id: TX-000379
+    timestamp: "2024-01-01T17:26:28"
+    warehouse: WH-0009
+    sku: SKU-0009
+    action: sale
+    quantity: 8
+  - id: TX-000380
+    timestamp: "2024-01-01T17:29:02"
+    warehouse: WH-0008
+    sku: SKU-0003
+    action: sale
+    quantity: 21
+  - id: TX-000381
+    timestamp: "2024-01-01T17:31:31"
+    warehouse: WH-0006
+    sku: SKU-0005
+    action: sale
+    quantity: 23
+  - id: TX-000382
+    timestamp: "2024-01-01T17:36:02"
+    warehouse: WH-0002
+    sku: SKU-0000
+    action: sale
+    quantity: 18
+  - id: TX-000383
+    timestamp: "2024-01-01T17:37:52"
+    warehouse: WH-0007
+    sku: SKU-0007
+    action: restock
+    quantity: 93
+  - id: TX-000384
+    timestamp: "2024-01-01T17:40:04"
+    warehouse: WH-0004
+    sku: SKU-0005
+    action: transfer
+    quantity: 21
+    destination: WH-0005
+  - id: TX-000385
+    timestamp: "2024-01-01T17:41:04"
+    warehouse: WH-0001
+    sku: SKU-0009
+    action: adjustment
+    quantity: -3
+    reason: audit
+  - id: TX-000386
+    timestamp: "2024-01-01T17:43:03"
+    warehouse: WH-0002
+    sku: SKU-0000
+    action: restock
+    quantity: 60
+  - id: TX-000387
+    timestamp: "2024-01-01T17:47:46"
+    warehouse: WH-0004
+    sku: SKU-0000
+    action: sale
+    quantity: 1
+  - id: TX-000388
+    timestamp: "2024-01-01T17:50:48"
+    warehouse: WH-0001
+    sku: SKU-0005
+    action: restock
+    quantity: 46
+  - id: TX-000389
+    timestamp: "2024-01-01T17:55:10"
+    warehouse: WH-0008
+    sku: SKU-0008
+    action: adjustment
+    quantity: 5
+    reason: damage
+  - id: TX-000390
+    timestamp: "2024-01-01T17:59:58"
+    warehouse: WH-0003
+    sku: SKU-0001
+    action: restock
+    quantity: 52
+  - id: TX-000391
+    timestamp: "2024-01-01T18:01:51"
+    warehouse: WH-0004
+    sku: SKU-0002
+    action: transfer
+    quantity: 24
+    destination: WH-0000
+  - id: TX-000392
+    timestamp: "2024-01-01T18:05:13"
+    warehouse: WH-0009
+    sku: SKU-0003
+    action: transfer
+    quantity: 20
+    destination: WH-0002
+  - id: TX-000393
+    timestamp: "2024-01-01T18:09:10"
+    warehouse: WH-0008
+    sku: SKU-0005
+    action: transfer
+    quantity: 13
+    destination: WH-0001
+  - id: TX-000394
+    timestamp: "2024-01-01T18:10:28"
+    warehouse: WH-0002
+    sku: SKU-0007
+    action: sale
+    quantity: 11
+  - id: TX-000395
+    timestamp: "2024-01-01T18:13:05"
+    warehouse: WH-0006
+    sku: SKU-0003
+    action: sale
+    quantity: 15
+  - id: TX-000396
+    timestamp: "2024-01-01T18:15:51"
+    warehouse: WH-0004
+    sku: SKU-0009
+    action: adjustment
+    quantity: 8
+    reason: audit
+  - id: TX-000397
+    timestamp: "2024-01-01T18:18:34"
+    warehouse: WH-0003
+    sku: SKU-0000
+    action: transfer
+    quantity: 15
+    destination: WH-0001
+  - id: TX-000398
+    timestamp: "2024-01-01T18:21:41"
+    warehouse: WH-0008
+    sku: SKU-0004
+    action: sale
+    quantity: 23
+  - id: TX-000399
+    timestamp: "2024-01-01T18:23:11"
+    warehouse: WH-0004
+    sku: SKU-0005
+    action: restock
+    quantity: 88
+  - id: TX-000400
+    timestamp: "2024-01-01T18:25:34"
+    warehouse: WH-0002
+    sku: SKU-0007
+    action: sale
+    quantity: 5
+  - id: TX-000401
+    timestamp: "2024-01-01T18:29:56"
+    warehouse: WH-0009
+    sku: SKU-0005
+    action: transfer
+    quantity: 23
+    destination: WH-0006
+  - id: TX-000402
+    timestamp: "2024-01-01T18:34:27"
+    warehouse: WH-0003
+    sku: SKU-0003
+    action: transfer
+    quantity: 17
+    destination: WH-0001
+  - id: TX-000403
+    timestamp: "2024-01-01T18:38:45"
+    warehouse: WH-0005
+    sku: SKU-0001
+    action: restock
+    quantity: 82
+  - id: TX-000404
+    timestamp: "2024-01-01T18:40:12"
+    warehouse: WH-0008
+    sku: SKU-0008
+    action: sale
+    quantity: 7
+  - id: TX-000405
+    timestamp: "2024-01-01T18:41:58"
+    warehouse: WH-0008
+    sku: SKU-0007
+    action: sale
+    quantity: 4
+  - id: TX-000406
+    timestamp: "2024-01-01T18:44:13"
+    warehouse: WH-0007
+    sku: SKU-0001
+    action: transfer
+    quantity: 15
+    destination: WH-0009
+  - id: TX-000407
+    timestamp: "2024-01-01T18:45:11"
+    warehouse: WH-0008
+    sku: SKU-0006
+    action: restock
+    quantity: 68
+  - id: TX-000408
+    timestamp: "2024-01-01T18:46:10"
+    warehouse: WH-0004
+    sku: SKU-0000
+    action: restock
+    quantity: 60
+  - id: TX-000409
+    timestamp: "2024-01-01T18:48:50"
+    warehouse: WH-0003
+    sku: SKU-0009
+    action: transfer
+    quantity: 2
+    destination: WH-0001
+  - id: TX-000410
+    timestamp: "2024-01-01T18:52:56"
+    warehouse: WH-0001
+    sku: SKU-0008
+    action: sale
+    quantity: 2
+  - id: TX-000411
+    timestamp: "2024-01-01T18:54:01"
+    warehouse: WH-0007
+    sku: SKU-0000
+    action: adjustment
+    quantity: -1
+    reason: correction
+  - id: TX-000412
+    timestamp: "2024-01-01T18:56:03"
+    warehouse: WH-0006
+    sku: SKU-0005
+    action: transfer
+    quantity: 15
+    destination: WH-0007
+  - id: TX-000413
+    timestamp: "2024-01-01T18:59:46"
+    warehouse: WH-0008
+    sku: SKU-0002
+    action: sale
+    quantity: 21
+  - id: TX-000414
+    timestamp: "2024-01-01T19:03:14"
+    warehouse: WH-0008
+    sku: SKU-0006
+    action: sale
+    quantity: 17
+  - id: TX-000415
+    timestamp: "2024-01-01T19:04:49"
+    warehouse: WH-0003
+    sku: SKU-0000
+    action: transfer
+    quantity: 10
+    destination: WH-0000
+  - id: TX-000416
+    timestamp: "2024-01-01T19:09:16"
+    warehouse: WH-0008
+    sku: SKU-0006
+    action: transfer
+    quantity: 13
+    destination: WH-0009
+  - id: TX-000417
+    timestamp: "2024-01-01T19:11:43"
+    warehouse: WH-0005
+    sku: SKU-0002
+    action: sale
+    quantity: 9
+  - id: TX-000418
+    timestamp: "2024-01-01T19:13:49"
+    warehouse: WH-0001
+    sku: SKU-0000
+    action: adjustment
+    quantity: 3
+    reason: audit
+  - id: TX-000419
+    timestamp: "2024-01-01T19:16:22"
+    warehouse: WH-0001
+    sku: SKU-0009
+    action: sale
+    quantity: 2
+  - id: TX-000420
+    timestamp: "2024-01-01T19:20:40"
+    warehouse: WH-0000
+    sku: SKU-0003
+    action: restock
+    quantity: 15
+  - id: TX-000421
+    timestamp: "2024-01-01T19:24:35"
+    warehouse: WH-0008
+    sku: SKU-0003
+    action: restock
+    quantity: 17
+  - id: TX-000422
+    timestamp: "2024-01-01T19:26:16"
+    warehouse: WH-0004
+    sku: SKU-0003
+    action: restock
+    quantity: 83
+  - id: TX-000423
+    timestamp: "2024-01-01T19:29:29"
+    warehouse: WH-0005
+    sku: SKU-0003
+    action: restock
+    quantity: 48
+  - id: TX-000424
+    timestamp: "2024-01-01T19:31:12"
+    warehouse: WH-0008
+    sku: SKU-0003
+    action: adjustment
+    quantity: 3
+    reason: found
+  - id: TX-000425
+    timestamp: "2024-01-01T19:34:02"
+    warehouse: WH-0009
+    sku: SKU-0002
+    action: sale
+    quantity: 21
+  - id: TX-000426
+    timestamp: "2024-01-01T19:38:10"
+    warehouse: WH-0000
+    sku: SKU-0005
+    action: restock
+    quantity: 92
+  - id: TX-000427
+    timestamp: "2024-01-01T19:41:55"
+    warehouse: WH-0005
+    sku: SKU-0006
+    action: transfer
+    quantity: 5
+    destination: WH-0007
+  - id: TX-000428
+    timestamp: "2024-01-01T19:44:58"
+    warehouse: WH-0008
+    sku: SKU-0007
+    action: sale
+    quantity: 8
+  - id: TX-000429
+    timestamp: "2024-01-01T19:47:23"
+    warehouse: WH-0002
+    sku: SKU-0007
+    action: sale
+    quantity: 2
+  - id: TX-000430
+    timestamp: "2024-01-01T19:51:24"
+    warehouse: WH-0008
+    sku: SKU-0008
+    action: adjustment
+    quantity: -6
+    reason: correction
+  - id: TX-000431
+    timestamp: "2024-01-01T19:53:58"
+    warehouse: WH-0005
+    sku: SKU-0001
+    action: sale
+    quantity: 15
+  - id: TX-000432
+    timestamp: "2024-01-01T19:57:37"
+    warehouse: WH-0003
+    sku: SKU-0000
+    action: sale
+    quantity: 5
+  - id: TX-000433
+    timestamp: "2024-01-01T20:01:20"
+    warehouse: WH-0009
+    sku: SKU-0000
+    action: transfer
+    quantity: 7
+    destination: WH-0001
+  - id: TX-000434
+    timestamp: "2024-01-01T20:03:41"
+    warehouse: WH-0005
+    sku: SKU-0004
+    action: restock
+    quantity: 11
+  - id: TX-000435
+    timestamp: "2024-01-01T20:05:59"
+    warehouse: WH-0001
+    sku: SKU-0007
+    action: adjustment
+    quantity: -3
+    reason: damage
+  - id: TX-000436
+    timestamp: "2024-01-01T20:09:52"
+    warehouse: WH-0008
+    sku: SKU-0005
+    action: adjustment
+    quantity: -1
+    reason: correction
+  - id: TX-000437
+    timestamp: "2024-01-01T20:14:20"
+    warehouse: WH-0005
+    sku: SKU-0004
+    action: restock
+    quantity: 43
+  - id: TX-000438
+    timestamp: "2024-01-01T20:17:54"
+    warehouse: WH-0007
+    sku: SKU-0007
+    action: restock
+    quantity: 22
+  - id: TX-000439
+    timestamp: "2024-01-01T20:22:24"
+    warehouse: WH-0005
+    sku: SKU-0003
+    action: transfer
+    quantity: 11
+    destination: WH-0006
+  - id: TX-000440
+    timestamp: "2024-01-01T20:26:25"
+    warehouse: WH-0003
+    sku: SKU-0002
+    action: sale
+    quantity: 1
+  - id: TX-000441
+    timestamp: "2024-01-01T20:29:08"
+    warehouse: WH-0009
+    sku: SKU-0009
+    action: restock
+    quantity: 63
+  - id: TX-000442
+    timestamp: "2024-01-01T20:32:09"
+    warehouse: WH-0005
+    sku: SKU-0003
+    action: sale
+    quantity: 13
+  - id: TX-000443
+    timestamp: "2024-01-01T20:34:44"
+    warehouse: WH-0005
+    sku: SKU-0004
+    action: restock
+    quantity: 72
+  - id: TX-000444
+    timestamp: "2024-01-01T20:39:25"
+    warehouse: WH-0005
+    sku: SKU-0002
+    action: restock
+    quantity: 27
+  - id: TX-000445
+    timestamp: "2024-01-01T20:44:05"
+    warehouse: WH-0008
+    sku: SKU-0000
+    action: sale
+    quantity: 17
+  - id: TX-000446
+    timestamp: "2024-01-01T20:44:52"
+    warehouse: WH-0001
+    sku: SKU-0000
+    action: transfer
+    quantity: 14
+    destination: WH-0000
+  - id: TX-000447
+    timestamp: "2024-01-01T20:46:32"
+    warehouse: WH-0003
+    sku: SKU-0001
+    action: transfer
+    quantity: 1
+    destination: WH-0002
+  - id: TX-000448
+    timestamp: "2024-01-01T20:48:53"
+    warehouse: WH-0005
+    sku: SKU-0000
+    action: restock
+    quantity: 89
+  - id: TX-000449
+    timestamp: "2024-01-01T20:53:30"
+    warehouse: WH-0000
+    sku: SKU-0000
+    action: transfer
+    quantity: 18
+    destination: WH-0009
+  - id: TX-000450
+    timestamp: "2024-01-01T20:57:30"
+    warehouse: WH-0008
+    sku: SKU-0004
+    action: sale
+    quantity: 18
+  - id: TX-000451
+    timestamp: "2024-01-01T21:00:26"
+    warehouse: WH-0006
+    sku: SKU-0002
+    action: sale
+    quantity: 4
+  - id: TX-000452
+    timestamp: "2024-01-01T21:01:45"
+    warehouse: WH-0003
+    sku: SKU-0003
+    action: restock
+    quantity: 89
+  - id: TX-000453
+    timestamp: "2024-01-01T21:06:44"
+    warehouse: WH-0005
+    sku: SKU-0004
+    action: sale
+    quantity: 13
+  - id: TX-000454
+    timestamp: "2024-01-01T21:07:54"
+    warehouse: WH-0006
+    sku: SKU-0007
+    action: sale
+    quantity: 19
+  - id: TX-000455
+    timestamp: "2024-01-01T21:10:28"
+    warehouse: WH-0003
+    sku: SKU-0004
+    action: adjustment
+    quantity: -8
+    reason: audit
+  - id: TX-000456
+    timestamp: "2024-01-01T21:11:45"
+    warehouse: WH-0006
+    sku: SKU-0008
+    action: restock
+    quantity: 70
+  - id: TX-000457
+    timestamp: "2024-01-01T21:12:43"
+    warehouse: WH-0002
+    sku: SKU-0001
+    action: restock
+    quantity: 73
+  - id: TX-000458
+    timestamp: "2024-01-01T21:16:55"
+    warehouse: WH-0005
+    sku: SKU-0009
+    action: restock
+    quantity: 22
+  - id: TX-000459
+    timestamp: "2024-01-01T21:21:55"
+    warehouse: WH-0003
+    sku: SKU-0003
+    action: adjustment
+    quantity: 8
+    reason: correction
+  - id: TX-000460
+    timestamp: "2024-01-01T21:24:43"
+    warehouse: WH-0001
+    sku: SKU-0004
+    action: sale
+    quantity: 18
+  - id: TX-000461
+    timestamp: "2024-01-01T21:25:29"
+    warehouse: WH-0005
+    sku: SKU-0000
+    action: sale
+    quantity: 7
+  - id: TX-000462
+    timestamp: "2024-01-01T21:27:12"
+    warehouse: WH-0006
+    sku: SKU-0001
+    action: transfer
+    quantity: 6
+    destination: WH-0004
+  - id: TX-000463
+    timestamp: "2024-01-01T21:29:45"
+    warehouse: WH-0006
+    sku: SKU-0008
+    action: restock
+    quantity: 52
+  - id: TX-000464
+    timestamp: "2024-01-01T21:33:31"
+    warehouse: WH-0002
+    sku: SKU-0001
+    action: transfer
+    quantity: 24
+    destination: WH-0009
+  - id: TX-000465
+    timestamp: "2024-01-01T21:36:58"
+    warehouse: WH-0006
+    sku: SKU-0003
+    action: sale
+    quantity: 3
+  - id: TX-000466
+    timestamp: "2024-01-01T21:40:22"
+    warehouse: WH-0009
+    sku: SKU-0009
+    action: restock
+    quantity: 60
+  - id: TX-000467
+    timestamp: "2024-01-01T21:43:39"
+    warehouse: WH-0004
+    sku: SKU-0007
+    action: sale
+    quantity: 16
+  - id: TX-000468
+    timestamp: "2024-01-01T21:46:05"
+    warehouse: WH-0006
+    sku: SKU-0006
+    action: sale
+    quantity: 6
+  - id: TX-000469
+    timestamp: "2024-01-01T21:49:49"
+    warehouse: WH-0009
+    sku: SKU-0004
+    action: sale
+    quantity: 8
+  - id: TX-000470
+    timestamp: "2024-01-01T21:50:56"
+    warehouse: WH-0002
+    sku: SKU-0006
+    action: sale
+    quantity: 23
+  - id: TX-000471
+    timestamp: "2024-01-01T21:52:44"
+    warehouse: WH-0005
+    sku: SKU-0005
+    action: transfer
+    quantity: 3
+    destination: WH-0001
+  - id: TX-000472
+    timestamp: "2024-01-01T21:53:16"
+    warehouse: WH-0007
+    sku: SKU-0005
+    action: adjustment
+    quantity: -2
+    reason: audit
+  - id: TX-000473
+    timestamp: "2024-01-01T21:54:53"
+    warehouse: WH-0006
+    sku: SKU-0007
+    action: sale
+    quantity: 18
+  - id: TX-000474
+    timestamp: "2024-01-01T21:59:45"
+    warehouse: WH-0000
+    sku: SKU-0001
+    action: restock
+    quantity: 55
+  - id: TX-000475
+    timestamp: "2024-01-01T22:01:02"
+    warehouse: WH-0005
+    sku: SKU-0006
+    action: restock
+    quantity: 11
+  - id: TX-000476
+    timestamp: "2024-01-01T22:04:01"
+    warehouse: WH-0001
+    sku: SKU-0008
+    action: restock
+    quantity: 41
+  - id: TX-000477
+    timestamp: "2024-01-01T22:08:57"
+    warehouse: WH-0006
+    sku: SKU-0002
+    action: sale
+    quantity: 5
+  - id: TX-000478
+    timestamp: "2024-01-01T22:11:44"
+    warehouse: WH-0007
+    sku: SKU-0002
+    action: sale
+    quantity: 3
+  - id: TX-000479
+    timestamp: "2024-01-01T22:13:39"
+    warehouse: WH-0006
+    sku: SKU-0004
+    action: restock
+    quantity: 71
+  - id: TX-000480
+    timestamp: "2024-01-01T22:14:48"
+    warehouse: WH-0003
+    sku: SKU-0007
+    action: sale
+    quantity: 20
+  - id: TX-000481
+    timestamp: "2024-01-01T22:16:58"
+    warehouse: WH-0002
+    sku: SKU-0004
+    action: restock
+    quantity: 10
+  - id: TX-000482
+    timestamp: "2024-01-01T22:20:50"
+    warehouse: WH-0009
+    sku: SKU-0006
+    action: sale
+    quantity: 11
+  - id: TX-000483
+    timestamp: "2024-01-01T22:25:05"
+    warehouse: WH-0009
+    sku: SKU-0002
+    action: sale
+    quantity: 10
+  - id: TX-000484
+    timestamp: "2024-01-01T22:28:19"
+    warehouse: WH-0003
+    sku: SKU-0007
+    action: restock
+    quantity: 50
+  - id: TX-000485
+    timestamp: "2024-01-01T22:30:19"
+    warehouse: WH-0005
+    sku: SKU-0004
+    action: adjustment
+    quantity: 10
+    reason: correction
+  - id: TX-000486
+    timestamp: "2024-01-01T22:32:53"
+    warehouse: WH-0004
+    sku: SKU-0006
+    action: sale
+    quantity: 12
+  - id: TX-000487
+    timestamp: "2024-01-01T22:34:21"
+    warehouse: WH-0003
+    sku: SKU-0009
+    action: adjustment
+    quantity: 7
+    reason: damage
+  - id: TX-000488
+    timestamp: "2024-01-01T22:35:04"
+    warehouse: WH-0007
+    sku: SKU-0003
+    action: adjustment
+    quantity: 4
+    reason: found
+  - id: TX-000489
+    timestamp: "2024-01-01T22:36:09"
+    warehouse: WH-0006
+    sku: SKU-0007
+    action: transfer
+    quantity: 21
+    destination: WH-0002
+  - id: TX-000490
+    timestamp: "2024-01-01T22:39:14"
+    warehouse: WH-0002
+    sku: SKU-0006
+    action: sale
+    quantity: 13
+  - id: TX-000491
+    timestamp: "2024-01-01T22:40:21"
+    warehouse: WH-0009
+    sku: SKU-0007
+    action: restock
+    quantity: 84
+  - id: TX-000492
+    timestamp: "2024-01-01T22:44:16"
+    warehouse: WH-0006
+    sku: SKU-0008
+    action: restock
+    quantity: 14
+  - id: TX-000493
+    timestamp: "2024-01-01T22:47:50"
+    warehouse: WH-0008
+    sku: SKU-0009
+    action: transfer
+    quantity: 4
+    destination: WH-0001
+  - id: TX-000494
+    timestamp: "2024-01-01T22:50:27"
+    warehouse: WH-0005
+    sku: SKU-0002
+    action: transfer
+    quantity: 19
+    destination: WH-0000
+  - id: TX-000495
+    timestamp: "2024-01-01T22:54:21"
+    warehouse: WH-0005
+    sku: SKU-0006
+    action: adjustment
+    quantity: -7
+    reason: audit
+  - id: TX-000496
+    timestamp: "2024-01-01T22:55:41"
+    warehouse: WH-0008
+    sku: SKU-0008
+    action: sale
+    quantity: 18
+  - id: TX-000497
+    timestamp: "2024-01-01T22:58:04"
+    warehouse: WH-0006
+    sku: SKU-0007
+    action: restock
+    quantity: 96
+  - id: TX-000498
+    timestamp: "2024-01-01T23:02:50"
+    warehouse: WH-0000
+    sku: SKU-0007
+    action: sale
+    quantity: 4
+  - id: TX-000499
+    timestamp: "2024-01-01T23:05:51"
+    warehouse: WH-0001
+    sku: SKU-0001
+    action: restock
+    quantity: 28
+query:
+  warehouse: WH-0007
+  sku: SKU-0007
+
+Question: What is the current inventory count of SKU-0007 at WH-0007?
+Respond with only the numeric count.

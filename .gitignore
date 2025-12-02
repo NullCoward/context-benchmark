@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Large generated files
+benchmark_*.json
+benchmark_*.txt
+!sample*.json
+!sample*.txt
+
+# Results (keep structure, ignore data)
+results/*.csv
+results/*.json
+
+# Environment
+.env
+*.local
+
+# IDE
+.vscode/
+.idea/
